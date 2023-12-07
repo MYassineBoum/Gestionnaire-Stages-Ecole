@@ -1,1 +1,30 @@
-<p>sidebar works!</p>
+<mat-drawer-container autosize>
+    
+    <mat-drawer-content>
+        <mat-nav-list>
+            <mat-list-item routerLink="/dashboard">
+                <button mat-button><mat-icon>dashboard</mat-icon> Dashboard</button>
+            </mat-list-item>
+            <mat-list-item routerLink="/stage">
+                <button mat-button><mat-icon>home</mat-icon> Stages</button>
+            </mat-list-item>
+            <mat-list-item routerLink="/etudiant">
+                <button mat-button><mat-icon>explore</mat-icon> Etudiants</button>
+            </mat-list-item>
+            <mat-list-item routerLink="/professeur">
+                <button mat-button><mat-icon>table</mat-icon> Professeurs</button>
+            </mat-list-item>
+            <mat-list-item routerLink="/tuteur">
+                <button mat-button><mat-icon>settings</mat-icon> Tuteurs</button>
+            </mat-list-item>
+            <mat-list-item routerLink="/entreprise">
+                <button mat-button><mat-icon>help</mat-icon> Entreprises</button>
+            </mat-list-item>
+            <mat-list-item routerLink="/">
+                <button mat-button><mat-icon>analytics</mat-icon> Quitter</button>
+            </mat-list-item>
+        </mat-nav-list>
+    
+    </mat-drawer-content>
+
+</mat-drawer-container>

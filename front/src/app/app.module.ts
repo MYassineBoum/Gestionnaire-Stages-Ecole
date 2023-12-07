@@ -1,6 +1,7 @@
+import { MatSidenavModule } from '@angular/material/sidenav';
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
-
+import { MaterialModule } from './material-module';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { SidebarComponent } from './shared/sidebar/sidebar.component';
@@ -14,6 +15,8 @@ import { FooterComponent } from './shared/footer/footer.component';
 import { HomeComponent } from './shared/home/home.component';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { DashboardComponent } from './admin/dashboard/dashboard.component';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { MatSlideToggleModule } from '@angular/material/slide-toggle';
 
 @NgModule({
   declarations: [
@@ -32,7 +35,11 @@ import { DashboardComponent } from './admin/dashboard/dashboard.component';
   imports: [
     BrowserModule,
     AppRoutingModule,
-    NgbModule
+    NgbModule,
+    BrowserAnimationsModule,
+    MatSlideToggleModule,
+    MatSidenavModule,
+    MaterialModule
   ],
   providers: [],
   bootstrap: [AppComponent]
