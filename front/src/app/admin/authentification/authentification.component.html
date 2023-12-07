@@ -1,16 +1,20 @@
 <div class="authentification">
     <div class="box">
-        <h1>Authentification</h1>
+        <h1>Accès stricte</h1>
         <div>
             <div class="inputBox">
+                <label>Identifiant</label>
                 <input type="text" formControlName="username" required>
-                <label>Identifiant Admin</label>
             </div>
             <div class="inputBox">
-                <input type="password" formControlName="password" required>
                 <label>Mot de passe</label>
+                <input type="password" formControlName="password" required>
             </div>
-            <button type="submit">Accéder</button>
+            <div class="buttons">
+                <a routerLink="/dashboard"><button type="submit">Accéder</button></a>
+                <a routerLink="/"><button type="submit">Revenir</button></a>
+            </div>
         </div>
     </div>
 </div>
+<app-footer></app-footer>
