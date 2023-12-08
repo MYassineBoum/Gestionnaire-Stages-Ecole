@@ -17,6 +17,7 @@ import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { DashboardComponent } from './admin/dashboard/dashboard.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MatSlideToggleModule } from '@angular/material/slide-toggle';
+import { LayoutComponent } from './admin/layout/layout.component';
 
 @NgModule({
   declarations: [
@@ -30,7 +31,8 @@ import { MatSlideToggleModule } from '@angular/material/slide-toggle';
     AuthentificationComponent,
     FooterComponent,
     HomeComponent,
-    DashboardComponent
+    DashboardComponent,
+    LayoutComponent
   ],
   imports: [
     BrowserModule,

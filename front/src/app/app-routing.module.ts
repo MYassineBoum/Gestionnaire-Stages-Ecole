@@ -8,13 +8,14 @@ import { EtudiantComponent } from './admin/etudiant/etudiant.component';
 import { ProfesseurComponent } from './admin/professeur/professeur.component';
 import { StageComponent } from './admin/stage/stage.component';
 import { TuteurComponent } from './admin/tuteur/tuteur.component';
+import { LayoutComponent } from './admin/layout/layout.component';
 
 const routes: Routes = [
   { path: '', component: HomeComponent, children: [
     { path: '', component: HomeComponent },
   ]},
 
-  { path: 'dashboard', component: DashboardComponent, children: [
+  { path: 'dashboard', component: LayoutComponent, children: [
     { path: '', component: DashboardComponent },
   ]},
 
@@ -22,27 +23,23 @@ const routes: Routes = [
     { path: '', component: AuthentificationComponent },
   ]},
 
-  { path: 'dashboard', component: DashboardComponent, children: [
-    { path: '', component: DashboardComponent },
-  ]},
-
-  { path: 'entreprise', component: EntrepriseComponent, children: [
+  { path: 'entreprise', component: LayoutComponent, children: [
     { path: '', component: EntrepriseComponent },
   ]},
 
-  { path: 'etudiant', component: EtudiantComponent, children: [
+  { path: 'etudiant', component: LayoutComponent, children: [
     { path: '', component: EtudiantComponent },
   ]},
 
-  { path: 'professeur', component: ProfesseurComponent, children: [
+  { path: 'professeur', component: LayoutComponent, children: [
     { path: '', component: ProfesseurComponent },
   ]},
 
-  { path: 'stage', component: StageComponent, children: [
+  { path: 'stage', component: LayoutComponent, children: [
     { path: '', component: StageComponent },
   ]},
 
-  { path: 'tuteur', component: TuteurComponent, children: [
+  { path: 'tuteur', component: LayoutComponent, children: [
     { path: '', component: TuteurComponent },
   ]},
 ];
