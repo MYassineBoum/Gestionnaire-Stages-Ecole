@@ -18,6 +18,7 @@ import { DashboardComponent } from './admin/dashboard/dashboard.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MatSlideToggleModule } from '@angular/material/slide-toggle';
 import { LayoutComponent } from './admin/layout/layout.component';
+import { IdentificationComponent } from './shared/identification/identification.component';
 
 @NgModule({
   declarations: [
@@ -32,7 +33,8 @@ import { LayoutComponent } from './admin/layout/layout.component';
     FooterComponent,
     HomeComponent,
     DashboardComponent,
-    LayoutComponent
+    LayoutComponent,
+    IdentificationComponent
   ],
   imports: [
     BrowserModule,

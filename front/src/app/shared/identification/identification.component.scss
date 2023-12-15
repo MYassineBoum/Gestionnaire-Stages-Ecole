@@ -1,5 +1,5 @@
 
-.home {
+.identification {
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -9,7 +9,7 @@
     overflow: hidden;
 }
 
-.home h1 {
+.identification h1 {
     color: #31304D;
     font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
 }
@@ -44,4 +44,22 @@
 .buttons button:hover a {
     color: #B6BBC4;
     transition: 0.5s;
+}
+
+.buttons{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    margin-top: 100px;
+    margin-bottom: 80px;
+}
+
+.revenir button{
+    width: auto;
+    background-color: transparent;
+    border: none;
+    padding: 0;
+}
+.revenir button mat-icon{
+    scale: 2;
 }
