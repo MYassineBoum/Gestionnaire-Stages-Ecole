@@ -1,4 +1,4 @@
-POST http://localhost:9092/auth/login
+POST http://localhost:9092/api/login
 Content-Type: application/x-www-form-urlencoded
 
 username=admin1&password=12345

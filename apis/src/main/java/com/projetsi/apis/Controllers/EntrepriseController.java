@@ -25,8 +25,7 @@ public class EntrepriseController {
 
     @PostMapping("/api/entreprise/supprimer")
     public ResponseEntity<String> supprimerentreprise(@PathVariable("no_entreprise") Long no_entreprise) {
-        Optional<Entreprise> entreprise = entrepriseRepository.findById(no_entreprise);
-        entrepriseRepository.delete(entreprise.get());
+
         return new ResponseEntity<String>("entreprise supprimé!", HttpStatus.OK);
     }
 
