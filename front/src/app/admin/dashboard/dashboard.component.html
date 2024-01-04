@@ -1,10 +1,11 @@
 <div class="dashboard">
     <h1>Statistiques de la plateforme.</h1>
     <div class="subdash">
-        <div class="carre"><b>1000 </b> Stages</div>
-        <div class="carre"><b>1000 </b>Etudiants</div>
-        <div class="carre"><b>1000 </b>Professeurs</div>
-        <div class="carre"><b>1000 </b>Tuteurs</div>
-        <div class="carre"><b>1000 </b>Entreprises</div>
+        <div class="carre" routerLink="/stage"><b>{{statistiques.totalStages}} </b>Stages</div>
+        <div class="carre" routerLink="/etudiant"><b>{{statistiques.totalEtudiants}} </b>Etudiants</div>
+        <div class="carre" routerLink="/professeur"><b>{{statistiques.totalProfesseurs}} </b>Professeurs</div>
+        <div class="carre" routerLink="/tuteur"><b>{{statistiques.totalTuteurs}} </b>Tuteurs</div>
+        <div class="carre" routerLink="/entreprise"><b>{{statistiques.totalEntreprises}} </b>Entreprises</div>
     </div>
 </div>
+<app-footer></app-footer>

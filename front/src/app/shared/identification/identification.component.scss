@@ -7,59 +7,40 @@
     width: 100%;
     min-height: 90vh;
     overflow: hidden;
-}
-
-.identification h1 {
-    color: #31304D;
     font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
 }
 
-.buttons button {
-    outline: none;
-    border: none;
-    border-radius: 5px;
-    background-color: #B6BBC4;
-    padding: 20px;
-    width: 200px;
-    margin: 50px;
-    transition: 0.5s;
-}
-
-.buttons button a {
-    text-decoration: none;
-    color: #31304D;
-    font-size: 20px;
-    font-weight: bold;
-    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
-}
-
-.buttons button:hover {
-    border-radius: 0;
-    background-color: #31304D;
-    transition: 0.5s;
-    transform: translateX(-5px) translateY(-5px);
-    box-shadow: gray 5px 5px;
-}
-
-.buttons button:hover a {
-    color: #B6BBC4;
-    transition: 0.5s;
-}
-
-.buttons{
+.mail-section {
     display: flex;
-    flex-direction: row;
-    align-items: center;
-    margin-top: 100px;
-    margin-bottom: 80px;
+    flex-direction: column;
+    align-items: start;
+    justify-content: center;
 }
 
-.revenir button{
-    width: auto;
-    background-color: transparent;
-    border: none;
-    padding: 0;
+.mail-section input {
+    width: 500px;
+    padding: 10px;
+    border-radius: 5px;
+    padding-left: 10px;
+    border: 2px solid #B6BBC4;
 }
-.revenir button mat-icon{
+
+.mail-section label {
+    font-size: 20px;
+    margin-bottom: 10px;
+}
+
+.retour {
+    padding-top: 50px;
+}
+
+.retour mat-icon {
     scale: 2;
+    cursor: pointer;
+    transition: .2s;
+}
+
+.retour mat-icon:hover {
+    color: #A4A9B1;
+    transition: .2s;
 }

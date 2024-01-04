@@ -1,11 +1,11 @@
 .dashboard{
     width: 100%;
-    height: 95vh;
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
     font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    padding: 50px;
 }
 
 .dashboard h1{
@@ -15,7 +15,7 @@
 
 .subdash {
     width: 100%;
-    margin-top: 20px;
+    margin-top: 50px;
     display: flex;
     align-items:center;
     justify-content:center;
@@ -26,9 +26,20 @@
     width: 200px;
     padding: 50px 0;
     background-color: #B6BBC4;
-    margin:60px;
+    margin:80px;
     border-radius: 5px;
     text-align: center;
-    font-size:large;
+    font-size:22px;
     color: #31304D;
+    transition: 0.5s;
+    cursor: pointer;
+}
+
+.carre:hover{
+    border-radius: 0;
+    background-color: #31304D;
+    color: #B6BBC4;
+    transition: 0.5s;
+    transform: translateX(-5px) translateY(-5px);
+    box-shadow: gray 5px 5px;    
 }
