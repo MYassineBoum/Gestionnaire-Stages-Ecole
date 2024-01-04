@@ -1,20 +1,20 @@
 <div class="authentification">
     <div class="box">
         <h1>Accès stricte</h1>
-        <div>
+        <form [formGroup]="formLogin" (ngSubmit)="loginJWT()">
             <div class="inputBox">
                 <label>Identifiant</label>
-                <input type="text" formControlName="username" required>
+                <input type="text" placeholder="Votre identifiant" class="form-control" formControlName="username">
             </div>
             <div class="inputBox">
                 <label>Mot de passe</label>
-                <input type="password" formControlName="password" required>
+                <input type="password" placeholder="Votre mot de passe" class="form-control" formControlName="password">
             </div>
             <div class="buttons">
-                <a routerLink="/dashboard"><button type="submit">Accéder</button></a>
-                <a routerLink="/"><button type="submit">Revenir</button></a>
+                <button>Accéder</button>
+                <a routerLink="/"><button type="button">Revenir</button></a>
             </div>
-        </div>
+        </form>
     </div>
 </div>
 <app-footer></app-footer>

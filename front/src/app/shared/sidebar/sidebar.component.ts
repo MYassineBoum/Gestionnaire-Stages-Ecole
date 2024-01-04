@@ -6,5 +6,5 @@ import { MatSidenavModule } from '@angular/material/sidenav';
   styleUrls: ['./sidebar.component.scss']
 })
 export class SidebarComponent {
-
+  
 }

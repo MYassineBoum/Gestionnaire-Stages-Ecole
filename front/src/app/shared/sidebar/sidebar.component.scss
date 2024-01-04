@@ -4,6 +4,8 @@ mat-nav-list {
 
 mat-list-item {
     margin-top: 30px;
+    padding: 30px;
+    padding-left: 10px;
 }
 
 button {
@@ -16,6 +18,17 @@ button {
 }
 
 mat-icon {
-    font-size: 20px;
     scale: 1.2;
+}
+
+.mat-mdc-button {
+    --mat-mdc-button-persistent-ripple-color: none;
+}
+
+.mat-button-toggle-focus-overlay {
+    display: none;
+}
+
+.active {
+    background-color: #B6BBC4;
 }

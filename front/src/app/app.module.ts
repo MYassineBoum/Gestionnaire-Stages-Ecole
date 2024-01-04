@@ -19,6 +19,8 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MatSlideToggleModule } from '@angular/material/slide-toggle';
 import { LayoutComponent } from './admin/layout/layout.component';
 import { IdentificationComponent } from './shared/identification/identification.component';
+import { FormGroup, FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { HttpClientModule } from '@angular/common/http';
 
 @NgModule({
   declarations: [
@@ -43,7 +45,10 @@ import { IdentificationComponent } from './shared/identification/identification.
     BrowserAnimationsModule,
     MatSlideToggleModule,
     MatSidenavModule,
-    MaterialModule
+    MaterialModule,
+    HttpClientModule,
+    FormsModule, 
+    ReactiveFormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]
