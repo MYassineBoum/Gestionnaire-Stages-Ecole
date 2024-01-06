@@ -3,8 +3,8 @@ mat-nav-list {
 }
 
 mat-list-item {
-    margin-top: 30px;
-    padding: 30px;
+    margin-top: 18px;
+    padding: 28px;
     padding-left: 10px;
 }
 
@@ -38,6 +38,14 @@ p {
     text-align: center;
     font-size: 30px;
     margin-top: -20px;
+    margin-bottom: 30px;
     font-weight: bold;
     font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    transition: .2s;
+    cursor: pointer;
+}
+
+p:hover {
+    color: #A4A9B1;
+    transition: .2s;
 }

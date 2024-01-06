@@ -10,6 +10,8 @@ import { StageComponent } from './admin/stage/stage.component';
 import { TuteurComponent } from './admin/tuteur/tuteur.component';
 import { LayoutComponent } from './admin/layout/layout.component';
 import { IdentificationComponent } from './shared/identification/identification.component';
+import { PromotionComponent } from './admin/promotion/promotion.component';
+import { TypeComponent } from './admin/type/type.component';
 
 const routes: Routes = [
   { path: '', component: HomeComponent, children: [
@@ -18,6 +20,14 @@ const routes: Routes = [
   
   { path: 'identification', component: IdentificationComponent, children: [
     { path: '', component: IdentificationComponent },
+  ]},
+
+  { path: 'promotion', component: LayoutComponent, children: [
+    { path: '', component: PromotionComponent },
+  ]},
+
+  { path: 'type', component: LayoutComponent, children: [
+    { path: '', component: TypeComponent },
   ]},
 
   { path: 'dashboard', component: LayoutComponent, children: [

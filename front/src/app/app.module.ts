@@ -20,7 +20,10 @@ import { MatSlideToggleModule } from '@angular/material/slide-toggle';
 import { LayoutComponent } from './admin/layout/layout.component';
 import { IdentificationComponent } from './shared/identification/identification.component';
 import { FormGroup, FormsModule, ReactiveFormsModule } from '@angular/forms';
-import { HttpClientModule } from '@angular/common/http';
+import { HTTP_INTERCEPTORS, HttpClientModule } from '@angular/common/http';
+import { PromotionComponent } from './admin/promotion/promotion.component';
+import { TypeComponent } from './admin/type/type.component';
+import { AppHttpInterceptor } from './interceptors/app-http.interceptor';
 
 @NgModule({
   declarations: [
@@ -36,7 +39,9 @@ import { HttpClientModule } from '@angular/common/http';
     HomeComponent,
     DashboardComponent,
     LayoutComponent,
-    IdentificationComponent
+    IdentificationComponent,
+    PromotionComponent,
+    TypeComponent
   ],
   imports: [
     BrowserModule,
@@ -50,7 +55,9 @@ import { HttpClientModule } from '@angular/common/http';
     FormsModule, 
     ReactiveFormsModule
   ],
-  providers: [],
+  providers: [
+    {provide: HTTP_INTERCEPTORS, useClass: AppHttpInterceptor, multi: true}
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

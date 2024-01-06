@@ -1,5 +1,6 @@
 import { HttpClient, HttpHeaders, HttpParams } from '@angular/common/http';
 import { Injectable } from '@angular/core';
+import { jwtDecode } from 'jwt-decode';
 
 @Injectable({
   providedIn: 'root'
@@ -7,6 +8,8 @@ import { Injectable } from '@angular/core';
 export class AuthentificationService {
 
   baseUrl = "http://localhost:9092/api/";
+  accessToken !: string;
+  isAuthenticated !: boolean;
 
   constructor(private httpClient: HttpClient) { }
 
@@ -16,6 +19,11 @@ export class AuthentificationService {
       headers: new HttpHeaders().set("Content-Type", "application/x-www-form-urlencoded")
     }
     return this.httpClient.post(this.baseUrl + 'login', httpParams, options);
+  }
+
+  public loadJWT(resp: any) {
+    this.isAuthenticated = true;
+    this.accessToken = resp['access-token'];
   }
 
 }
