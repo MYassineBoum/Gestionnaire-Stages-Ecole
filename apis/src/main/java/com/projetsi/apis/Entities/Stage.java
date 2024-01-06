@@ -14,6 +14,7 @@ import lombok.*;
 @Table(name = "Stage")
 public class Stage {
     @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long no_stage;
 
     @OneToOne(cascade = CascadeType.ALL)

@@ -29,7 +29,7 @@ public class PromoController {
 
     @PostMapping("/api/promo/modifier")
     public ResponseEntity<Promo> modifierPromo(@RequestBody Promo promo) {
-        Optional<Promo> promoTrouvé = promoRepository.findById(promo.getAnnée_promo());
+        Optional<Promo> promoTrouvé = promoRepository.findById(promo.getAnnee_promo());
         promoRepository.delete(promoTrouvé.get());
         return ResponseEntity.ok(promoRepository.save(promo));
     }

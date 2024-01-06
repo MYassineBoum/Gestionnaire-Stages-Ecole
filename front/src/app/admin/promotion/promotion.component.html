@@ -13,11 +13,18 @@
               <tr>
                 <th scope="col">Année</th>
                 <th scope="col">Nombre des étudiants</th>
+                <th scope="col">Actions</th>
               </tr>
             </thead>
-            <tbody>
-              <th>x</th>
-              <th>x</th>
+            <tbody *ngFor="let promo of listePromos">
+              <tr>
+                <td>{{promo.annee_promo}}</td>
+                <td>{{promo.nb_etudiants}}</td>
+                <td>
+                  <mat-icon>edit</mat-icon>
+                  <mat-icon>delete</mat-icon>
+                </td>
+              </tr>
             </tbody>
           </table> 
     </div>

@@ -49,7 +49,7 @@ public class SecurityConfig {
     InMemoryUserDetailsManager inMemoryUserDetailsManager(){
         PasswordEncoder passwordEncoder = passwordEncoder();
         return new InMemoryUserDetailsManager(
-                User.withUsername("admin1").password(passwordEncoder.encode("12345")).authorities("USER","ADMIN").build()
+                User.withUsername("admin2024").password(passwordEncoder.encode("123456")).authorities("USER","ADMIN").build()
         );
     }
     @Bean

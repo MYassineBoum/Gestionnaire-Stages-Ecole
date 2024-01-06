@@ -16,14 +16,21 @@
                 <th scope="col">Nom</th>
                 <th scope="col">Prenom</th>
                 <th scope="col">Télephone</th>
+                <th scope="col">Actions</th>
               </tr>
             </thead>
-            <tbody>
-              <th>x</th>
-              <th>x</th>
-              <th>x</th>
-              <th>x</th>
-              <th>x</th>
+            <tbody *ngFor="let tuteur of listeTuteurs">
+              <tr>
+                <td>{{tuteur.no_tuteur}}</td>
+                <td>{{tuteur.qualite_tuteur}}</td>
+                <td>{{tuteur.nom_tuteur}}</td>
+                <td>{{tuteur.prenom_tuteur}}</td>
+                <td>{{tuteur.telephone_tuteur}}</td>
+                <td>
+                  <mat-icon>edit</mat-icon>
+                  <mat-icon>delete</mat-icon>
+                </td>
+              </tr>
             </tbody>
           </table> 
     </div>

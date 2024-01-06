@@ -12,11 +12,13 @@
             <thead>
               <tr>
                 <th scope="col">N°</th>
+                <th scope="col">Qualité</th>
                 <th scope="col">Nom</th>
                 <th scope="col">Prénom</th>
-                <th scope="col">Qualité</th>
                 <th scope="col">Email</th>
                 <th scope="col">Adresse</th>
+                <th scope="col">Code postal</th>
+                <th scope="col">Ville</th>
                 <th scope="col">Date de naissance</th>
                 <th scope="col">Sexe</th>
                 <th scope="col">Téléphone</th>
@@ -24,18 +26,25 @@
                 <th scope="col">Actions</th>
               </tr>
             </thead>
-            <tbody>
-              <th>x</th>
-              <th>x</th>
-              <th>x</th>
-              <th>x</th>
-              <th>x</th>
-              <th>x</th>
-              <th>x</th>
-              <th>x</th>
-              <th>x</th>
-              <th>x</th>
-              <th>x</th>
+            <tbody *ngFor="let etudiant of listeEtudiants">
+              <tr>
+                <td>{{etudiant.no_etudiant}}</td>
+                <td>{{etudiant.qualite_etudiant}}</td>
+                <td>{{etudiant.nom_etudiant}}</td>
+                <td>{{etudiant.prenom_etudiant}}</td>
+                <td>{{etudiant.email_etudiant}}</td>
+                <td>{{etudiant.adresse_etudiant}}</td>
+                <td>{{etudiant.code_postal_etudiant}}</td>
+                <td>{{etudiant.ville_etudiant}}</td>
+                <td>{{etudiant.date_naissance_etudiant}}</td>
+                <td>{{etudiant.sexe_etudiant}}</td>
+                <td>{{etudiant.telephone_etudiant}}</td>
+                <td>{{etudiant.mention_etudiant}}</td>
+                <td>
+                  <mat-icon>edit</mat-icon>
+                  <mat-icon>delete</mat-icon>
+                </td>
+              </tr>
             </tbody>
           </table> 
     </div>
