@@ -1,0 +1,51 @@
+<div mat-dialog-content>
+    <p>Ajouter un professeur.</p>
+    <mat-form-field>
+        <mat-label>Qualité</mat-label>
+        <input matInput [(ngModel)]="newProf.qualite_professeur">
+    </mat-form-field>
+    <mat-form-field>
+        <mat-label>Nom</mat-label>
+        <input matInput [(ngModel)]="newProf.nom_professeur">
+    </mat-form-field>
+    <mat-form-field>
+        <mat-label>Prenom</mat-label>
+        <input matInput [(ngModel)]="newProf.prenom_professeur">
+    </mat-form-field>
+    <mat-form-field>
+        <mat-label>Email</mat-label>
+        <input matInput [(ngModel)]="newProf.email_professeur">
+    </mat-form-field>
+    <mat-form-field>
+        <mat-label>Adresse</mat-label>
+        <input matInput [(ngModel)]="newProf.adresse_professeur">
+    </mat-form-field>
+    <mat-form-field>
+        <mat-label>Code postal</mat-label>
+        <input matInput [(ngModel)]="newProf.code_postal_professeur">
+    </mat-form-field>
+    <mat-form-field>
+        <mat-label>Ville</mat-label>
+        <input matInput [(ngModel)]="newProf.ville_professeur">
+    </mat-form-field>
+    <mat-form-field>
+        <mat-label>Téléphone école</mat-label>
+        <input matInput [(ngModel)]="newProf.tel_ecole_professeur">
+    </mat-form-field>
+    <mat-form-field>
+        <mat-label>Télephone domicile</mat-label>
+        <input matInput [(ngModel)]="newProf.tel_domicile_professeur">
+    </mat-form-field>
+    <mat-form-field>
+        <mat-label>Date embauche</mat-label>
+        <input matInput type="date" [(ngModel)]="newProf.date_embauche_professeur">
+    </mat-form-field>
+    <mat-form-field>
+        <mat-label>Date départ</mat-label>
+        <input matInput type="date" [(ngModel)]="newProf.date_depart_professeur">
+    </mat-form-field>
+</div>
+<div mat-dialog-actions>
+    <button mat-button mat-dialog-close>Annuler</button>
+    <button mat-button mat-dialog-close (click)="approuverAjout()">Ok</button>
+</div>

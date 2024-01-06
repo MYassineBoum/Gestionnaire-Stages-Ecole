@@ -1,4 +1,7 @@
+import { PromotionPopupComponent } from './../promotion-popup/promotion-popup.component';
 import { Component, OnInit } from '@angular/core';
+import { MatDialog } from '@angular/material/dialog';
+import { Promo } from 'src/app/Classes/promo';
 import { PromotionService } from 'src/app/services/promotion.service';
 
 @Component({
@@ -8,9 +11,11 @@ import { PromotionService } from 'src/app/services/promotion.service';
 })
 export class PromotionComponent implements OnInit {
 
-  listePromos : any = [];
+  listePromos !: Promo[];
 
-  constructor(private promotionService: PromotionService) { }
+  constructor(private promotionService: PromotionService, private dialog: MatDialog) { 
+    this.listePromos = [];
+  }
 
   ngOnInit(): void {
     this.fetchPromotions();
@@ -21,7 +26,8 @@ export class PromotionComponent implements OnInit {
       {
         next: resp => {
           console.log(resp);
-          this.listePromos.push(resp);
+          this.listePromos = resp as Promo[];
+          console.log("liste : " + this.listePromos);
         },
         error: err => {
           console.log(err);
@@ -31,6 +37,7 @@ export class PromotionComponent implements OnInit {
   }
 
   ajouterPromo() {
-    
+    this.dialog.open(PromotionPopupComponent);
   }
+
 }

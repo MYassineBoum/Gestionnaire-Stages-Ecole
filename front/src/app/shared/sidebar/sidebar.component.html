@@ -27,7 +27,7 @@
                 <button mat-button [disableRipple]="true"><mat-icon>list_alt</mat-icon> Types</button>
             </mat-list-item>
             <mat-list-item routerLink="/">
-                <button mat-button [disableRipple]="true"><mat-icon>exit_to_app</mat-icon> Quitter</button>
+                <button mat-button [disableRipple]="true" (click)="quitter()"><mat-icon>exit_to_app</mat-icon> Quitter</button>
             </mat-list-item>
         </mat-nav-list>
 

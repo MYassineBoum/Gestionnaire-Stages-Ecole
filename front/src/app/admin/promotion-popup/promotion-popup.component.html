@@ -1,0 +1,11 @@
+<div mat-dialog-content>
+    <p>Ajouter une promotion.</p>
+    <mat-form-field>
+        <mat-label>Année</mat-label>
+        <input matInput [(ngModel)]="newPromo.annee_promo">
+    </mat-form-field>
+</div>
+<div mat-dialog-actions>
+    <button mat-button mat-dialog-close>Annuler</button>
+    <button mat-button mat-dialog-close (click)="approuverAjout()">Ok</button>
+</div>

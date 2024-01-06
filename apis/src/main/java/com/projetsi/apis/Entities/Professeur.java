@@ -3,6 +3,8 @@ package com.projetsi.apis.Entities;
 import jakarta.persistence.*;
 import lombok.*;
 
+import java.util.Date;
+
 @Data
 @Getter
 @Setter
@@ -25,6 +27,6 @@ public class Professeur {
     private String ville_professeur;
     private String tel_ecole_professeur;
     private String tel_domicile_professeur;
-    private String date_embauche_professeur;
-    private String date_depart_professeur;
+    private Date date_embauche_professeur;
+    private Date date_depart_professeur;
 }

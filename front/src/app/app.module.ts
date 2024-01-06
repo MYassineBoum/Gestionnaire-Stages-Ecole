@@ -24,6 +24,8 @@ import { HTTP_INTERCEPTORS, HttpClientModule } from '@angular/common/http';
 import { PromotionComponent } from './admin/promotion/promotion.component';
 import { TypeComponent } from './admin/type/type.component';
 import { AppHttpInterceptor } from './interceptors/app-http.interceptor';
+import { PromotionPopupComponent } from './admin/promotion-popup/promotion-popup.component';
+import { ProfesseurPopupComponent } from './admin/professeur-popup/professeur-popup.component';
 
 @NgModule({
   declarations: [
@@ -41,7 +43,9 @@ import { AppHttpInterceptor } from './interceptors/app-http.interceptor';
     LayoutComponent,
     IdentificationComponent,
     PromotionComponent,
-    TypeComponent
+    TypeComponent,
+    PromotionPopupComponent,
+    ProfesseurPopupComponent
   ],
   imports: [
     BrowserModule,
