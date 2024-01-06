@@ -20,8 +20,8 @@ public class Entreprise {
     private String adresse_entreprise;
     private String code_postal_entreprise;
     private String ville_entreprise;
-    private String téléphone_entreprise;
+    private String telephone_entreprise;
     private String fax_entreprise;
     private String contact_entreprise;
-    private String tél_contact_entreprise;
+    private String tel_contact_entreprise;
 }

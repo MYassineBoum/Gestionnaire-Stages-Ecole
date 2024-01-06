@@ -16,8 +16,8 @@ public class Tuteur {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long no_tuteur;
 
-    private String qualité_tuteur;
+    private String qualite_tuteur;
     private String nom_tuteur;
-    private String prénom_tuteur;
-    private String téléphone_tuteur;
+    private String prenom_tuteur;
+    private String telephone_tuteur;
 }

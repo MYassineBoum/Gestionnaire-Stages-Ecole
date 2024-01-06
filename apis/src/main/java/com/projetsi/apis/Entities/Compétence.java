@@ -13,8 +13,8 @@ import lombok.*;
 @Table(name = "Compétence")
 public class Compétence {
     @Id
-    private String code_compétence;
+    private String code_competence;
 
-    private String libellé_compétence;
-    private String description_compétence;
+    private String libelle_competence;
+    private String description_competence;
 }

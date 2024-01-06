@@ -36,6 +36,6 @@ public class Stage {
     @JoinColumn(name = "code_type")
     private Type type;
 
-    private Integer année_stage;
+    private Integer annee_stage;
     private String compte_rendu_stage;
 }

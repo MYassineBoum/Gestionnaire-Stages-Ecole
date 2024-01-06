@@ -16,15 +16,15 @@ public class Professeur {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long no_professeur;
 
-    private String qualité_professeur;
+    private String qualite_professeur;
     private String nom_professeur;
-    private String prénom_professeur;
+    private String prenom_professeur;
     private String email_professeur;
     private String adresse_professeur;
     private String code_postal_professeur;
     private String ville_professeur;
-    private String tél_école_professeur;
-    private String tél_domicile_professeur;
+    private String tel_ecole_professeur;
+    private String tel_domicile_professeur;
     private String date_embauche_professeur;
-    private String date_départ_professeur;
+    private String date_depart_professeur;
 }
