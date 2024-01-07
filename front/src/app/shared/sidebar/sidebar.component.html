@@ -1,15 +1,15 @@
 <mat-drawer-container autosize>
     <mat-drawer-content style="background-color: white;">
         <mat-nav-list>
-            <p>GESTION ECM</p>
+            <p routerLink="/dashboard">GESTION ECM</p>
             <mat-list-item routerLink="/dashboard" routerLinkActive="active">
-                <button mat-button [disableRipple]="true"><mat-icon>dashboard</mat-icon> Dashboard</button>
+                <button mat-button [disableRipple]="true"><mat-icon>dashboard</mat-icon> Tableau de bord</button>
             </mat-list-item>
             <mat-list-item routerLink="/stage" routerLinkActive="active">
                 <button mat-button [disableRipple]="true"><mat-icon>folder_shared</mat-icon> Stages</button>
             </mat-list-item>
             <mat-list-item routerLink="/etudiant" routerLinkActive="active">
-                <button mat-button [disableRipple]="true"><mat-icon>school</mat-icon> Etudiants</button>
+                <button mat-button [disableRipple]="true"><mat-icon>portrait</mat-icon> Etudiants</button>
             </mat-list-item>
             <mat-list-item routerLink="/professeur" routerLinkActive="active">
                 <button mat-button [disableRipple]="true"><mat-icon>supervisor_account</mat-icon> Professeurs</button>
@@ -20,8 +20,14 @@
             <mat-list-item routerLink="/entreprise" routerLinkActive="active">
                 <button mat-button [disableRipple]="true"><mat-icon>business</mat-icon> Entreprises</button>
             </mat-list-item>
+            <mat-list-item routerLink="/promotion" routerLinkActive="active">
+                <button mat-button [disableRipple]="true"><mat-icon>school</mat-icon> Promotions</button>
+            </mat-list-item>
+            <mat-list-item routerLink="/type" routerLinkActive="active">
+                <button mat-button [disableRipple]="true"><mat-icon>list_alt</mat-icon> Types</button>
+            </mat-list-item>
             <mat-list-item routerLink="/">
-                <button mat-button [disableRipple]="true"><mat-icon>exit_to_app</mat-icon> Quitter</button>
+                <button mat-button [disableRipple]="true" (click)="quitter()"><mat-icon>exit_to_app</mat-icon> Quitter</button>
             </mat-list-item>
         </mat-nav-list>
 

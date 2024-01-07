@@ -1,6 +1,5 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
-import { IdentificationComponent } from '../shared/identification/identification.component';
 
 @Injectable({
   providedIn: 'root'
@@ -24,4 +23,9 @@ export class EtudiantService {
       }
     );
   }
+
+  fetchEtudiants() {
+    return this.httpClient.get('http://localhost:9092/api/etudiant/liste');
+  }
+
 }

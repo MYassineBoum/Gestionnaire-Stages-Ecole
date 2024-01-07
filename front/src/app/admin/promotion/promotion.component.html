@@ -1,0 +1,31 @@
+<div class="promotion">
+    <p>Ajouter ou consulter la liste des promotions.</p>
+    <div class="ajout">
+        <button (click)="ajouterPromo()">Ajouter</button>
+    </div>
+    <div class="filtre">
+      <label for="">Filtrer la recherche</label>
+      <input type="text" placeholder="Rechercher par des mots clés">
+    </div>
+    <div class="liste">
+        <table class="table table-striped">
+            <thead>
+              <tr>
+                <th scope="col">Année</th>
+                <th scope="col">Nombre des étudiants</th>
+                <th scope="col">Actions</th>
+              </tr>
+            </thead>
+            <tbody *ngFor="let promo of listePromos">
+              <tr>
+                <td>{{promo.annee_promo}}</td>
+                <td>{{promo.nb_etudiants}}</td>
+                <td>
+                  <mat-icon>delete</mat-icon>
+                </td>
+              </tr>
+            </tbody>
+          </table> 
+    </div>
+</div>
+<app-footer></app-footer>

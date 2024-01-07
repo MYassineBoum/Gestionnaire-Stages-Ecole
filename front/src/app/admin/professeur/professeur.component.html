@@ -1,7 +1,7 @@
 <div class="professeur">
     <p>Ajouter ou consulter la liste des professeurs.</p>
     <div class="ajout">
-        <button>Ajouter</button>
+        <button (click)="ajouterProf()">Ajouter</button>
     </div>
     <div class="filtre">
       <label for="">Filtrer la recherche</label>
@@ -23,21 +23,28 @@
                 <th scope="col">Télephone domicile</th>
                 <th scope="col">Date embauche</th>
                 <th scope="col">Date départ</th>
+                <th scope="col">Actions</th>
               </tr>
             </thead>
-            <tbody>
-              <th>x</th>
-              <th>x</th>
-              <th>x</th>
-              <th>x</th>
-              <th>x</th>
-              <th>x</th>
-              <th>x</th>
-              <th>x</th>
-              <th>x</th>
-              <th>x</th>
-              <th>x</th>
-              <th>x</th>
+            <tbody *ngFor="let professeur of listeProfesseurs">
+              <tr>
+                <td>{{professeur.no_professeur}}</td>
+                <td>{{professeur.qualite_professeur}}</td>
+                <td>{{professeur.nom_professeur}}</td>
+                <td>{{professeur.prenom_professeur}}</td>
+                <td>{{professeur.email_professeur}}</td>
+                <td>{{professeur.adresse_professeur}}</td>
+                <td>{{professeur.code_postal_professeur}}</td>
+                <td>{{professeur.ville_professeur}}</td>
+                <td>{{professeur.tel_ecole_professeur}}</td>
+                <td>{{professeur.tel_domicile_professeur}}</td>
+                <td>{{professeur.date_embauche_professeur}}</td>
+                <td>{{professeur.date_depart_professeur}}</td>
+                <td>
+                  <mat-icon>edit</mat-icon>
+                  <mat-icon>delete</mat-icon>
+                </td>
+              </tr>
             </tbody>
           </table> 
     </div>

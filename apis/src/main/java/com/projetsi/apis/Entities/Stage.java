@@ -14,6 +14,7 @@ import lombok.*;
 @Table(name = "Stage")
 public class Stage {
     @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long no_stage;
 
     @OneToOne(cascade = CascadeType.ALL)
@@ -36,6 +37,6 @@ public class Stage {
     @JoinColumn(name = "code_type")
     private Type type;
 
-    private Integer année_stage;
+    private Integer annee_stage;
     private String compte_rendu_stage;
 }

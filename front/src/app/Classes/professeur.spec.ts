@@ -1,6 +1,6 @@
-import { Professeur } from "./professeur";
+import { Professeur } from './professeur';
 
-describe('professeur', () => {
+describe('Professeur', () => {
   it('should create an instance', () => {
     expect(new Professeur()).toBeTruthy();
   });

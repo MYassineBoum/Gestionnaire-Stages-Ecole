@@ -13,8 +13,7 @@ import lombok.*;
 @Table(name = "Promo")
 public class Promo {
     @Id
-    private Long année_promo;
+    private Long annee_promo;
 
-    private Integer nb_inscrits_promo;
-    private Integer nb_recus_promo;
+    private Integer nb_etudiants;
 }

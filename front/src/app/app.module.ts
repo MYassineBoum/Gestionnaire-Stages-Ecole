@@ -20,8 +20,17 @@ import { MatSlideToggleModule } from '@angular/material/slide-toggle';
 import { LayoutComponent } from './admin/layout/layout.component';
 import { IdentificationComponent } from './shared/identification/identification.component';
 import { FormGroup, FormsModule, ReactiveFormsModule } from '@angular/forms';
+<<<<<<< HEAD
 import { HttpClientModule } from '@angular/common/http';
 import { UserInterfaceComponent } from './userinterface/userinterface.component';
+=======
+import { HTTP_INTERCEPTORS, HttpClientModule } from '@angular/common/http';
+import { PromotionComponent } from './admin/promotion/promotion.component';
+import { TypeComponent } from './admin/type/type.component';
+import { AppHttpInterceptor } from './interceptors/app-http.interceptor';
+import { PromotionPopupComponent } from './admin/promotion-popup/promotion-popup.component';
+import { ProfesseurPopupComponent } from './admin/professeur-popup/professeur-popup.component';
+>>>>>>> e0979f03348e68098c7218f4daea814442d22ca4
 
 @NgModule({
   declarations: [
@@ -38,7 +47,14 @@ import { UserInterfaceComponent } from './userinterface/userinterface.component'
     DashboardComponent,
     LayoutComponent,
     IdentificationComponent,
+<<<<<<< HEAD
     UserInterfaceComponent
+=======
+    PromotionComponent,
+    TypeComponent,
+    PromotionPopupComponent,
+    ProfesseurPopupComponent
+>>>>>>> e0979f03348e68098c7218f4daea814442d22ca4
   ],
   imports: [
     BrowserModule,
@@ -52,7 +68,9 @@ import { UserInterfaceComponent } from './userinterface/userinterface.component'
     FormsModule, 
     ReactiveFormsModule
   ],
-  providers: [],
+  providers: [
+    {provide: HTTP_INTERCEPTORS, useClass: AppHttpInterceptor, multi: true}
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

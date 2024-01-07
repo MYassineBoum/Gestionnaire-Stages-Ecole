@@ -49,7 +49,7 @@ public class SecurityConfig {
     InMemoryUserDetailsManager inMemoryUserDetailsManager(){
         PasswordEncoder passwordEncoder = passwordEncoder();
         return new InMemoryUserDetailsManager(
-                User.withUsername("admin1").password(passwordEncoder.encode("12345")).authorities("USER","ADMIN").build()
+                User.withUsername("admin2024").password(passwordEncoder.encode("123456")).authorities("USER","ADMIN").build()
         );
     }
     @Bean
@@ -58,10 +58,10 @@ public class SecurityConfig {
                 .csrf(csrf-> csrf.disable())
                 .cors(Customizer.withDefaults())
                 .sessionManagement(sm->sm.sessionCreationPolicy(SessionCreationPolicy.STATELESS))
-                //.authorizeHttpRequests(ar->ar.requestMatchers("/api/login/**").permitAll())
-                .authorizeHttpRequests(ar->ar.requestMatchers("/**").permitAll())
-                //.authorizeHttpRequests(ar->ar.anyRequest().authenticated())
-                //.oauth2ResourceServer(oauth2->oauth2.jwt(Customizer.withDefaults()))
+                .authorizeHttpRequests(ar->ar.requestMatchers("/api/login/**").permitAll())
+                //.authorizeHttpRequests(ar->ar.requestMatchers("/**").permitAll())
+                .authorizeHttpRequests(ar->ar.anyRequest().authenticated())
+                .oauth2ResourceServer(oauth2->oauth2.jwt(Customizer.withDefaults()))
                 .build();
     }
     @Bean

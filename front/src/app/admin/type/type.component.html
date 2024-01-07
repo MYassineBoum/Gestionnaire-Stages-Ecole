@@ -1,0 +1,32 @@
+<div class="type">
+    <p>Ajouter ou consulter la liste des types de stages disponibles.</p>
+    <div class="ajout">
+        <button>Ajouter</button>
+    </div>
+    <div class="filtre">
+      <label for="">Filtrer la recherche</label>
+      <input type="text" placeholder="Rechercher par des mots clés">
+    </div>
+    <div class="liste">
+        <table class="table table-striped">
+            <thead>
+              <tr>
+                <th scope="col">Code</th>
+                <th scope="col">Nombre de semaines</th>
+                <th scope="col">Actions</th>
+              </tr>
+            </thead>
+            <tbody *ngFor="let type of listeTypes">
+              <tr>
+                <td>{{type.code_type}}</td>
+                <td>{{type.nb_semaines}}</td>
+                <td>
+                  <mat-icon>edit</mat-icon>
+                  <mat-icon>delete</mat-icon>
+                </td>
+              </tr>
+            </tbody>
+          </table> 
+    </div>
+</div>
+<app-footer></app-footer>

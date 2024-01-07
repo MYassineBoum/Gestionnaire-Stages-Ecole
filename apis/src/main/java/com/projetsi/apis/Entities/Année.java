@@ -13,5 +13,5 @@ import lombok.*;
 @Table(name = "Année")
 public class Année {
     @Id
-    private Integer année;
+    private Integer annee;
 }

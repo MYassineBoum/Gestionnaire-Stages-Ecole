@@ -19,17 +19,24 @@
                 <th scope="col">Code type</th>
                 <th scope="col">Année stage</th>
                 <th scope="col">Compte rendu</th>
+                <th scope="col">Actions</th>
               </tr>
             </thead>
-            <tbody>
-              <th>x</th>
-              <th>x</th>
-              <th>x</th>
-              <th>x</th>
-              <th>x</th>
-              <th>x</th>
-              <th>x</th>
-              <th>x</th>
+            <tbody *ngFor="let stage of listeStages">
+              <tr>
+                <td>{{stage.no_stage}}</td>
+                <td>{{stage.no_etudiant}}</td>
+                <td>{{stage.no_professeur}}</td>
+                <td>{{stage.no_tuteur}}</td>
+                <td>{{stage.no_entreprise}}</td>
+                <td>{{stage.code_type}}</td>
+                <td>{{stage.annee_stage}}</td>
+                <td>{{stage.compte_rendu_stage}}</td>
+                <td>
+                  <mat-icon>edit</mat-icon>
+                  <mat-icon>delete</mat-icon>
+                </td>
+              </tr>
             </tbody>
           </table> 
     </div>

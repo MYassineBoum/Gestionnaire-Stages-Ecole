@@ -11,6 +11,9 @@ import { TuteurComponent } from './admin/tuteur/tuteur.component';
 import { LayoutComponent } from './admin/layout/layout.component';
 import { IdentificationComponent } from './shared/identification/identification.component';
 import { UserInterfaceComponent } from './userinterface/userinterface.component';
+import { PromotionComponent } from './admin/promotion/promotion.component';
+import { TypeComponent } from './admin/type/type.component';
+import { authenticationGuard } from './guards/authentication.guard';
 
 const routes: Routes = [
   { path: '', component: HomeComponent, children: [
@@ -25,7 +28,15 @@ const routes: Routes = [
     { path: '', component: IdentificationComponent },
   ]},
 
-  { path: 'dashboard', component: LayoutComponent, children: [
+  { path: 'promotion', component: LayoutComponent, canActivate: [authenticationGuard], children: [
+    { path: '', component: PromotionComponent },
+  ]},
+
+  { path: 'type', component: LayoutComponent, canActivate: [authenticationGuard], children: [
+    { path: '', component: TypeComponent },
+  ]},
+
+  { path: 'dashboard', component: LayoutComponent, canActivate: [authenticationGuard], children: [
     { path: '', component: DashboardComponent },
   ]},
 
@@ -33,23 +44,23 @@ const routes: Routes = [
     { path: '', component: AuthentificationComponent },
   ]},
 
-  { path: 'entreprise', component: LayoutComponent, children: [
+  { path: 'entreprise', component: LayoutComponent, canActivate: [authenticationGuard], children: [
     { path: '', component: EntrepriseComponent },
   ]},
 
-  { path: 'etudiant', component: LayoutComponent, children: [
+  { path: 'etudiant', component: LayoutComponent, canActivate: [authenticationGuard], children: [
     { path: '', component: EtudiantComponent },
   ]},
 
-  { path: 'professeur', component: LayoutComponent, children: [
+  { path: 'professeur', component: LayoutComponent, canActivate: [authenticationGuard], children: [
     { path: '', component: ProfesseurComponent },
   ]},
 
-  { path: 'stage', component: LayoutComponent, children: [
+  { path: 'stage', component: LayoutComponent, canActivate: [authenticationGuard], children: [
     { path: '', component: StageComponent },
   ]},
 
-  { path: 'tuteur', component: LayoutComponent, children: [
+  { path: 'tuteur', component: LayoutComponent, canActivate: [authenticationGuard], children: [
     { path: '', component: TuteurComponent },
   ]},
 ];

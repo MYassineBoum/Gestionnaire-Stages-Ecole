@@ -1,6 +1,7 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { IdentificationComponent } from '../shared/identification/identification.component';
+import { Professeur } from '../Classes/professeur';
 
 @Injectable({
   providedIn: 'root'
@@ -24,4 +25,13 @@ export class ProfesseurService {
       }
     );
   }
+
+  fetchProfesseurs() {
+    return this.httpClient.get('http://localhost:9092/api/professeur/liste');
+  }
+
+  ajouterProfesseur(prof: Professeur) {
+    return this.httpClient.post('http://localhost:9092/api/professeur/ajouter', prof);
+  }
+  
 }

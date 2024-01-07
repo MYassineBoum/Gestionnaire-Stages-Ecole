@@ -21,19 +21,24 @@
                 <th scope="col">Fax</th>
                 <th scope="col">Contact</th>
                 <th scope="col">Télephone contact</th>
+                <th scope="col">Actions</th>
               </tr>
             </thead>
-            <tbody>
-              <th>x</th>
-              <th>x</th>
-              <th>x</th>
-              <th>x</th>
-              <th>x</th>
-              <th>x</th>
-              <th>x</th>
-              <th>x</th>
-              <th>x</th>
-              <th>x</th>
+            <tbody *ngFor="let entreprise of listeEntreprises">
+              <td>{{entreprise.no_entreprise}}</td>
+              <td>{{entreprise.forme_juridique_entreprise}}</td>
+              <td>{{entreprise.raison_sociale_entreprise}}</td>
+              <td>{{entreprise.adresse_entreprise}}</td>
+              <td>{{entreprise.code_postal_entreprise}}</td>
+              <td>{{entreprise.ville_entreprise}}</td>
+              <td>{{entreprise.telephone_entreprise}}</td>
+              <td>{{entreprise.fax_entreprise}}</td>
+              <td>{{entreprise.contact_entreprise}}</td>
+              <td>{{entreprise.tel_contact_entreprise}}</td>
+              <td>
+                <mat-icon>edit</mat-icon>
+                <mat-icon>delete</mat-icon>
+              </td>
             </tbody>
           </table> 
     </div>
