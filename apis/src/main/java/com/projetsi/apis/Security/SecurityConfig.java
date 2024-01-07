@@ -59,7 +59,8 @@ public class SecurityConfig {
                 .cors(Customizer.withDefaults())
                 .sessionManagement(sm->sm.sessionCreationPolicy(SessionCreationPolicy.STATELESS))
                 .authorizeHttpRequests(ar->ar.requestMatchers("/api/login/**").permitAll())
-                //.authorizeHttpRequests(ar->ar.requestMatchers("/**").permitAll())
+                .authorizeHttpRequests(ar->ar.requestMatchers("/api/etudiant/get").permitAll())
+                .authorizeHttpRequests(ar->ar.requestMatchers("/api/professeur/get").permitAll())
                 .authorizeHttpRequests(ar->ar.anyRequest().authenticated())
                 .oauth2ResourceServer(oauth2->oauth2.jwt(Customizer.withDefaults()))
                 .build();

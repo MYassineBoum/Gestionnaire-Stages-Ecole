@@ -40,7 +40,7 @@ public class ProfesseurController {
         return ResponseEntity.ok(professeurRepository.findAll());
     }
 
-    @GetMapping("/api/professeur")
+    @GetMapping("/api/professeur/get")
     public ResponseEntity<Professeur> getProfesseur(@RequestParam("email_professeur") String email_professeur) {
         return ResponseEntity.ok(professeurRepository.findByEmail(email_professeur));
     }

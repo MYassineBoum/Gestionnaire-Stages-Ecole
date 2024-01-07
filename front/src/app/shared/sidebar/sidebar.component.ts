@@ -7,7 +7,7 @@ import { MatSidenavModule } from '@angular/material/sidenav';
 })
 export class SidebarComponent {
   quitter() {
-    localStorage.removeItem('isAuthenticated');
+    localStorage.setItem('isAuthenticated', 'false');
     localStorage.removeItem('token');
   }
 }
