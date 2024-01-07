@@ -1,11 +1,26 @@
 mat-nav-list {
-    margin-top: 50px;
+    margin-top: 40px; 
+}
+
+mat-drawer-content {
+    padding-bottom: 60px;
 }
 
 mat-list-item {
-    margin-top: 18px;
-    padding: 28px;
+    margin-top: 15px;
+    padding: 26px;
     padding-left: 10px;
+    transition: .2s;
+}
+
+mat-list-item:hover {
+    padding-left: 15px;
+    transition: .2s;
+}
+
+#logout:hover {
+    background-color: red;
+    transition: .2s;
 }
 
 button {

@@ -11,10 +11,10 @@ import { Observable } from 'rxjs';
 @Injectable()
 export class AppHttpInterceptor implements HttpInterceptor {
 
-  constructor(private authentificationService: AuthentificationService) {}
+  constructor() {}
 
   intercept(request: HttpRequest<unknown>, next: HttpHandler): Observable<HttpEvent<unknown>> {
-    if(!request.url.includes('/api/login')) {
+    if(!request.url.includes('/api/login') && !request.url.includes('/api/etudiant/get') && !request.url.includes('/api/professeur/get')) {
       let newRequest = request.clone({
         headers: request.headers.set('Authorization', 'Bearer ' + localStorage.getItem('token'))
       });
