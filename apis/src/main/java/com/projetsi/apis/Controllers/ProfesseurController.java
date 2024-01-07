@@ -10,6 +10,7 @@ import org.springframework.web.bind.annotation.*;
 import java.util.List;
 import java.util.Optional;
 
+
 @RestController
 public class ProfesseurController {
     @Autowired
@@ -38,4 +39,10 @@ public class ProfesseurController {
     public ResponseEntity<List<Professeur>> listerProfesseurs() {
         return ResponseEntity.ok(professeurRepository.findAll());
     }
+
+    @GetMapping("/api/professeur")
+    public ResponseEntity<Professeur> getProfesseur(@RequestParam("email_professeur") String email_professeur) {
+        return ResponseEntity.ok(professeurRepository.findByEmail(email_professeur));
+    }
+    
 }

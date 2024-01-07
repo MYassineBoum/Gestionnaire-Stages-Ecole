@@ -1,0 +1,13 @@
+<div *ngIf="etudiant!==null">
+    <p>{{etudiant.no_etudiant}}</p>
+    <p>{{etudiant.email_etudiant}}</p>
+</div>
+
+<div *ngIf="professeur!==null">
+    <p>{{professeur.no_professeur}}</p>
+    <p>{{professeur.email_professeur}}</p>
+</div>
+
+<div *ngIf="professeur===null && etudiant===null">
+    <p>user not found</p>
+</div>

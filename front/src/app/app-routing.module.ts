@@ -10,10 +10,15 @@ import { StageComponent } from './admin/stage/stage.component';
 import { TuteurComponent } from './admin/tuteur/tuteur.component';
 import { LayoutComponent } from './admin/layout/layout.component';
 import { IdentificationComponent } from './shared/identification/identification.component';
+import { UserInterfaceComponent } from './userinterface/userinterface.component';
 
 const routes: Routes = [
   { path: '', component: HomeComponent, children: [
     { path: '', component: HomeComponent },
+  ]},
+
+  { path: 'userinterface', component: UserInterfaceComponent, children: [
+    { path: '', component: UserInterfaceComponent },
   ]},
   
   { path: 'identification', component: IdentificationComponent, children: [

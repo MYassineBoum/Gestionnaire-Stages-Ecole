@@ -1,7 +1,11 @@
 <div class="identification">
     <div class="mail-section">
         <label for="">Saisir votre e-mail</label>
-        <input type="email" name="" id="" placeholder="exemple@email.domain">
+        <div class="emailsubmission">
+            <input type="email" [(ngModel)]="userInput" placeholder="exemple@email.domain">
+            <button (click)="submit()" routerLink="/userinterface">Submit</button>
+        </div>
+
     </div>
     <div class="retour">
         <mat-icon routerLink="/">keyboard_backspace</mat-icon>

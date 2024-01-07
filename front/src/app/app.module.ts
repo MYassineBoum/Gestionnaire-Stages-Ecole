@@ -21,6 +21,7 @@ import { LayoutComponent } from './admin/layout/layout.component';
 import { IdentificationComponent } from './shared/identification/identification.component';
 import { FormGroup, FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
+import { UserInterfaceComponent } from './userinterface/userinterface.component';
 
 @NgModule({
   declarations: [
@@ -36,7 +37,8 @@ import { HttpClientModule } from '@angular/common/http';
     HomeComponent,
     DashboardComponent,
     LayoutComponent,
-    IdentificationComponent
+    IdentificationComponent,
+    UserInterfaceComponent
   ],
   imports: [
     BrowserModule,
