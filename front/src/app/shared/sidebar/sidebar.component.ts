@@ -12,6 +12,8 @@ export class SidebarComponent {
   quitter() {
     localStorage.setItem('isAuthenticated', 'false');
     localStorage.removeItem('token');
+    console.log("Changed isAuthenticated state to false.");
+    console.log(localStorage.getItem('isAuthenticated'));
   }
-  
+
 }
