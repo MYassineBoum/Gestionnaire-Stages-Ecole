@@ -18,10 +18,10 @@ export class IdentificationComponent {
   etudiant!:Etudiant;
   
   constructor(private professeurService:ProfesseurService, private etudiantService:EtudiantService){
-    this.professeur = JSON.parse(localStorage.getItem("professeurObject")!);
     this.etudiant = JSON.parse(localStorage.getItem("etudiantObject")!);
+    this.professeur = JSON.parse(localStorage.getItem("professeurObject")!);
   }
-
+  
   submit(): void {
     console.log("user input: ", this.userInput);
     this.getProfesseur();

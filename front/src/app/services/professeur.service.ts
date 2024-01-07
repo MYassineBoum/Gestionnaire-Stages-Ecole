@@ -13,7 +13,7 @@ export class ProfesseurService {
   constructor(private httpClient: HttpClient) { }
 
   getProfesseur(email:string) {
-    this.httpClient.get(this.baseUrl+`api/professeur?email_professeur=${email}`).subscribe(
+    return this.httpClient.get(this.baseUrl+`api/professeur/get?email_professeur=${email}`).subscribe(
       {
         next: (resp) => {
           console.log(resp);
