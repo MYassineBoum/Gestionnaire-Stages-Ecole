@@ -11,7 +11,7 @@ export class EtudiantService {
   constructor(private httpClient: HttpClient) { }
 
   getEtudiant(email:string) {
-    this.httpClient.get(this.baseUrl+`api/etudiant?email_etudiant=${email}`).subscribe(
+    this.httpClient.get(this.baseUrl+`api/etudiant/get?email_etudiant=${email}`).subscribe(
       {
         next: (resp) => {
           console.log(resp);

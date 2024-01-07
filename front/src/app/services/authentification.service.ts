@@ -25,7 +25,7 @@ export class AuthentificationService {
 
   public loadJWT(resp: any) {
     this.isAuthenticated = true;
-    localStorage.setItem('isAuthenticated', this.isAuthenticated.toString());
+    localStorage.setItem('isAuthenticated', 'true');
     this.accessToken = resp['access-token'];
     localStorage.setItem('token', this.accessToken);
   }
