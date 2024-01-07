@@ -5,6 +5,7 @@ import jakarta.servlet.http.HttpServletRequest;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
+import org.springframework.http.HttpMethod;
 import org.springframework.security.authentication.AuthenticationManager;
 import org.springframework.security.authentication.ProviderManager;
 import org.springframework.security.authentication.dao.DaoAuthenticationProvider;
@@ -61,11 +62,11 @@ public class SecurityConfig {
                 //.authorizeHttpRequests(ar->ar.requestMatchers("/api/etudiant/get").permitAll())
                 //.authorizeHttpRequests(ar->ar.requestMatchers("/api/professeur/get").permitAll())
                 //.authorizeHttpRequests(ar->ar.requestMatchers("/api/login/**").permitAll())
-                .authorizeRequests(authorizeRequests ->
-                        authorizeRequests
+                .authorizeHttpRequests(ar ->
+                        ar
                                 .requestMatchers("/api/login/**").permitAll()
-                                .requestMatchers("/api/professeur/get/**").permitAll()
-                                .requestMatchers("/api/etudiant/get/**").permitAll()
+                                .requestMatchers(HttpMethod.GET, "/api/professeur/get").permitAll()
+                                .requestMatchers(HttpMethod.GET, "/api/etudiant/get").permitAll()
                                 .anyRequest().authenticated()
                 )
                 //.authorizeHttpRequests(ar->ar.anyRequest().authenticated())
