@@ -1,10 +1,9 @@
 <div *ngIf="etudiant!=null" class="blocEtud">
     <div class="cardetud">
-        <p>Hi, {{etudiant.qualite_etudiant}} {{etudiant.nom_etudiant}}</p>
+        <p>Salut! {{etudiant.qualite_etudiant}} {{etudiant.nom_etudiant}}</p>
         <p>{{etudiant.email_etudiant}}</p>
     </div>
-    <p class="stageP">Here you can find the list of your internships, 
-        combined with the updated validation :</p>
+    <p class="stageP">Voici la liste de vos stages, avec les mise-à-jour de décision des stages courants :</p>
     <div class="stage">
         <div class="liste">
             <table class="table table-striped">
@@ -41,32 +40,14 @@
         </div>
     </div>
 </div>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 <div *ngIf="professeur!=null" class="blocEtud">
     <div class="cardetud">
-        <p>Hi, {{professeur.qualite_professeur}} {{professeur.nom_professeur}}</p>
+        <p>Salut! {{professeur.qualite_professeur}} {{professeur.nom_professeur}}</p>
         <p>{{professeur.email_professeur}}</p>
     </div>
-    <p class="stageP">Here you can find the list of your internships, that 
-        you are responsible of :</p>
+    <p class="stageP">Voici la liste des stages que vous avez surveillé jusu'au présent :</p>
     <div class="stage">
         <div class="liste">
             <table class="table table-striped">
@@ -104,6 +85,9 @@
     </div>
 </div>
 
-<div *ngIf="professeur===null && etudiant===null">
-    <p>User not found!</p>
+<div *ngIf="professeur===null && etudiant===null" class="error">
+    <div class="diag">
+        <p>Pas d'utilisateur associé au email saisi, veuillez saisir une adresse existante</p>
+        <button routerLink="/identification" class="butn">Retour</button>
+    </div>
 </div>
