@@ -8,6 +8,7 @@ import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
+import com.projetsi.apis.Entities.Etudiant;
 import com.projetsi.apis.Entities.Stage;
 import com.projetsi.apis.Repositories.StageRepository;
 @RestController
@@ -38,4 +39,9 @@ public class StageController {
     public ResponseEntity<List<Stage>> listerStages() {
         return ResponseEntity.ok(stageRepository.findAll());
     }
+
+    // @GetMapping("/api/etudiant/get/stage")
+    // public ResponseEntity<List<Stage>> getStageEtudiant(@RequestParam("no_etudiant") Long no_etudiant) {
+    //     return ResponseEntity.ok(stageRepository.findStageEtudiant(no_etudiant));
+    // }
 }

@@ -1,13 +1,19 @@
-<div *ngIf="etudiant!==null">
+<div *ngIf="etudiant!=null">
     <p>{{etudiant.no_etudiant}}</p>
     <p>{{etudiant.email_etudiant}}</p>
 </div>
 
-<div *ngIf="professeur!==null">
+<div *ngIf="professeur!=null">
     <p>{{professeur.no_professeur}}</p>
     <p>{{professeur.email_professeur}}</p>
 </div>
 
 <div *ngIf="professeur===null && etudiant===null">
-    <p>user not found</p>
+    <p>User not found!</p>
 </div>
+<!-- 
+<div>
+    <button (click)="infos()">
+        ara a zbi
+    </button>
+</div> -->
