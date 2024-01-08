@@ -11,17 +11,6 @@ export class StatistiquesService {
   constructor(private httpClient: HttpClient) { }
 
   getStatistiques() {
-    return this.httpClient.get(this.baseUrl+"api/dashboard/statistiques").subscribe(
-      {
-        next: (resp) => {
-          console.log(resp);
-          localStorage.setItem("statistiquesObject", JSON.stringify(resp));
-        },
-        error: (err) => {
-          //console.log("Erreur lors de la récupération des statistiques");
-          console.log(err);
-        }
-      }
-    );
+    return this.httpClient.get(this.baseUrl + "api/dashboard/statistiques");
   }
 }

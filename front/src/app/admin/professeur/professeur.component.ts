@@ -12,10 +12,9 @@ import { Professeur } from 'src/app/Classes/professeur';
 export class ProfesseurComponent implements OnInit {
 
   listeProfesseurs !: Professeur[];
-  showDialog !: boolean;
 
   constructor(private professeurService: ProfesseurService, private dialog: MatDialog) { 
-    this.showDialog = false;
+    this.listeProfesseurs = [];
   }
 
   ngOnInit(): void {
@@ -37,10 +36,20 @@ export class ProfesseurComponent implements OnInit {
   }
 
   ajouterProf() {
-    this.showDialog = true;
-    this.dialog.open(ProfesseurPopupComponent, {
+    const dialogBox = this.dialog.open(ProfesseurPopupComponent, {
       width: '500px',
     });
+
+    dialogBox.afterClosed().subscribe(
+      {
+        next: () => {
+          this.fetchProfesseurs();
+        },
+        error: err => {
+          console.log(err);
+        }
+      }
+    );
   }
   
 }

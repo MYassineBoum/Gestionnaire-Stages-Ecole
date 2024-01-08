@@ -62,7 +62,8 @@ import { ProfesseurPopupComponent } from './admin/professeur-popup/professeur-po
     ReactiveFormsModule
   ],
   providers: [
-    {provide: HTTP_INTERCEPTORS, useClass: AppHttpInterceptor, multi: true}
+    {provide: HTTP_INTERCEPTORS, useClass: AppHttpInterceptor, multi: true},
+    ProfesseurComponent
   ],
   bootstrap: [AppComponent]
 })

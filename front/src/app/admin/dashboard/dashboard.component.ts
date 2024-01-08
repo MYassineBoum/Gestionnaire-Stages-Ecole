@@ -12,7 +12,7 @@ export class DashboardComponent implements OnInit {
   statistiques!: Statistiques;
 
   constructor(private statistiquesService: StatistiquesService) { 
-    this.statistiques = JSON.parse(localStorage.getItem("statistiquesObject")!);
+    this.statistiques = new Statistiques();
   }
 
   ngOnInit(): void {
@@ -20,7 +20,17 @@ export class DashboardComponent implements OnInit {
   }
 
   getStatistiques() {
-    this.statistiquesService.getStatistiques();
+    this.statistiquesService.getStatistiques().subscribe(
+      {
+        next: (resp) => {
+          console.log(resp);
+          this.statistiques = resp as Statistiques;
+        },
+        error: (err) => {
+          console.log(err);
+        }
+      }
+    );;
   }
 
 }

@@ -13,7 +13,9 @@ export class UserInterfaceComponent {
   etudiant!:Etudiant;
 
   constructor(private iden:IdentificationComponent) {
-    this.professeur = iden.professeur;
-    this.etudiant = iden.etudiant;
+    this.professeur = new Professeur();
+    this.etudiant = new Etudiant();
+    this.professeur = this.iden.professeur;
+    this.etudiant = this.iden.etudiant;
   }
 }
