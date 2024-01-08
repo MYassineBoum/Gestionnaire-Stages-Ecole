@@ -1,13 +1,107 @@
-<div *ngIf="etudiant!=null">
-    <div>
-        <p>Hi,{{etudiant.qualite_etudiant}} {{etudiant.nom_etudiant}}</p>
+<div *ngIf="etudiant!=null" class="blocEtud">
+    <div class="cardetud">
+        <p>Hi, {{etudiant.qualite_etudiant}} {{etudiant.nom_etudiant}}</p>
         <p>{{etudiant.email_etudiant}}</p>
+    </div>
+    <p class="stageP">Here you can find the list of your internships, 
+        combined with the updated validation :</p>
+    <div class="stage">
+        <div class="liste">
+            <table class="table table-striped">
+                <thead>
+                    <tr>
+                    <th scope="col">N°</th>
+                    <th scope="col">N° étudiant</th>
+                    <th scope="col">N° professeur</th>
+                    <th scope="col">N° tuteur</th>
+                    <th scope="col">N° entreprise</th>
+                    <th scope="col">Code type</th>
+                    <th scope="col">Année stage</th>
+                    <th scope="col">Compte rendu</th>
+                    <th scope="col">Actions</th>
+                    </tr>
+                </thead>
+                <tbody *ngFor="let stage of []">
+                    <tr>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td>
+                        <mat-icon>edit</mat-icon>
+                        <mat-icon>delete</mat-icon>
+                    </td>
+                    </tr>
+                </tbody>
+            </table> 
+        </div>
     </div>
 </div>
 
-<div *ngIf="professeur!=null">
-    <p>{{professeur.no_professeur}}</p>
-    <p>{{professeur.email_professeur}}</p>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div *ngIf="professeur!=null" class="blocEtud">
+    <div class="cardetud">
+        <p>Hi, {{professeur.qualite_professeur}} {{professeur.nom_professeur}}</p>
+        <p>{{professeur.email_professeur}}</p>
+    </div>
+    <p class="stageP">Here you can find the list of your internships, that 
+        you are responsible of :</p>
+    <div class="stage">
+        <div class="liste">
+            <table class="table table-striped">
+                <thead>
+                    <tr>
+                    <th scope="col">N°</th>
+                    <th scope="col">N° étudiant</th>
+                    <th scope="col">N° professeur</th>
+                    <th scope="col">N° tuteur</th>
+                    <th scope="col">N° entreprise</th>
+                    <th scope="col">Code type</th>
+                    <th scope="col">Année stage</th>
+                    <th scope="col">Compte rendu</th>
+                    <th scope="col">Actions</th>
+                    </tr>
+                </thead>
+                <tbody *ngFor="let stage of []">
+                    <tr>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td>
+                        <mat-icon>edit</mat-icon>
+                        <mat-icon>delete</mat-icon>
+                    </td>
+                    </tr>
+                </tbody>
+            </table> 
+        </div>
+    </div>
 </div>
 
 <div *ngIf="professeur===null && etudiant===null">

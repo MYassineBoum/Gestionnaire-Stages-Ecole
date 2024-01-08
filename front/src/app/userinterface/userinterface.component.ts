@@ -12,8 +12,7 @@ import { Stages } from '../Classes/stages';
 export class UserInterfaceComponent implements OnInit {
   professeur!: Professeur;
   etudiant!:Etudiant;
-  stagesProf!:Stages;
-  stagesEtu!:Stages;
+  stage!:Stages;
 
   constructor(private iden:IdentificationComponent) {
   }
@@ -21,7 +20,6 @@ export class UserInterfaceComponent implements OnInit {
   ngOnInit() {
     this.professeur = JSON.parse(localStorage.getItem('professeurObject')!) as Professeur;  
     this.etudiant = JSON.parse(localStorage.getItem('etudiantObject')!) as Etudiant;
-    this.stagesProf = JSON.parse(localStorage.getItem('stagesProfesseur')!) as Stages;
-    this.stagesEtu = JSON.parse(localStorage.getItem('stagesEtudiant')!) as Stages;
+    this.stage = new Stages();
   }
 }

@@ -4,8 +4,8 @@ import { Professeur } from "./professeur";
 export class Stages {
 
     no_stage!:number;
-    etudiant!:Etudiant;
-    professeur!:Professeur;
+    no_etudiant!:number;
+    no_professeur!:number;
     tuteur?:any;
     entreprise?:any;
     type!:any;
