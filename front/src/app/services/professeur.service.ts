@@ -13,17 +13,7 @@ export class ProfesseurService {
   constructor(private httpClient: HttpClient) { }
 
   getProfesseur(email:string) {
-    this.httpClient.get(this.baseUrl+`api/professeur/get?email_professeur=${email}`).subscribe(
-      {
-        next: (resp) => {
-          console.log(resp);
-          localStorage.setItem("professeurObject", JSON.stringify(resp));
-        },
-        error: (err) => {
-          console.log(err);
-        }
-      }
-    );
+    return this.httpClient.get(this.baseUrl+`api/professeur/get?email_professeur=${email}`);
   }
 
   fetchProfesseurs() {
