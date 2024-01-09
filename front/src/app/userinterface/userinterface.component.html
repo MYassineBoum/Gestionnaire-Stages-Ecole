@@ -17,23 +17,18 @@
                     <th scope="col">Code type</th>
                     <th scope="col">Année stage</th>
                     <th scope="col">Compte rendu</th>
-                    <th scope="col">Actions</th>
                     </tr>
                 </thead>
-                <tbody *ngFor="let stage of []">
+                <tbody *ngFor="let stage of listeStagesEtud">
                     <tr>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td>
-                        <mat-icon>edit</mat-icon>
-                        <mat-icon>delete</mat-icon>
-                    </td>
+                    <td>{{stage.no_stage}}</td>
+                    <td>{{stage.etudiant.no_etudiant}}</td>
+                    <td>{{stage.professeur.no_professeur}}</td>
+                    <td>{{stage.tuteur.no_tuteur}}</td>
+                    <td>{{stage.entreprise.no_entreprise}}</td>
+                    <td>{{stage.type.code_type}}</td>
+                    <td>{{stage.annee_stage}}</td>
+                    <td>{{stage.compte_rendu_stage}}</td>
                     </tr>
                 </tbody>
             </table> 
@@ -61,23 +56,18 @@
                     <th scope="col">Code type</th>
                     <th scope="col">Année stage</th>
                     <th scope="col">Compte rendu</th>
-                    <th scope="col">Actions</th>
                     </tr>
                 </thead>
-                <tbody *ngFor="let stage of []">
+                <tbody *ngFor="let stage of listeStagesProf">
                     <tr>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td>
-                        <mat-icon>edit</mat-icon>
-                        <mat-icon>delete</mat-icon>
-                    </td>
+                        <td>{{stage.no_stage}}</td>
+                        <td>{{stage.etudiant.no_etudiant}}</td>
+                        <td>{{stage.professeur.no_professeur}}</td>
+                        <td>{{stage.tuteur.no_tuteur}}</td>
+                        <td>{{stage.entreprise.no_entreprise}}</td>
+                        <td>{{stage.type.code_type}}</td>
+                        <td>{{stage.annee_stage}}</td>
+                        <td>{{stage.compte_rendu_stage}}</td>
                     </tr>
                 </tbody>
             </table> 

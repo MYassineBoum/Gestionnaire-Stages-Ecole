@@ -11,5 +11,13 @@ export class StageService {
   fetchStages() {
     return this.httpClient.get('http://localhost:9092/api/stage/liste');
   }
+
+  fetchStagesEtudiant(no_etudiant:number) {
+    return this.httpClient.get(`http://localhost:9092/api/etudiant/get/stage?no_etudiant=${no_etudiant}`);
+  }
+
+  fetchStagesProfesseur(no_professeur:number) {
+    return this.httpClient.get(`http://localhost:9092/api/etudiant/get/stageProf?no_professeur=${no_professeur}`);
+  }
   
 }

@@ -1,15 +1,18 @@
+import { Type } from "./type";
+import { Entreprise } from "./entreprise";
 import { Etudiant } from "./etudiant";
 import { Professeur } from "./professeur";
+import { Tuteur } from "./tuteur";
 
 export class Stages {
 
     no_stage!:number;
-    no_etudiant!:number;
-    no_professeur!:number;
-    tuteur?:any;
-    entreprise?:any;
-    type!:any;
+    etudiant!:Etudiant;
+    professeur!:Professeur;
+    tuteur!:Tuteur;
+    entreprise!:Entreprise;
     annee_stage!:number;
+    type!:Type;
     compte_rendu_stage!:string;
 
 }
