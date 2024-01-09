@@ -1,19 +1,83 @@
-<div *ngIf="etudiant!=null">
-    <p>{{etudiant.no_etudiant}}</p>
-    <p>{{etudiant.email_etudiant}}</p>
+<div *ngIf="etudiant!=null" class="blocEtud">
+    <div class="cardetud">
+        <p>Salut! {{etudiant.qualite_etudiant}} {{etudiant.nom_etudiant}}</p>
+        <p>{{etudiant.email_etudiant}}</p>
+    </div>
+    <p class="stageP">Voici la liste de vos stages, avec les mise-à-jour de décision des stages courants :</p>
+    <div class="stage">
+        <div class="liste">
+            <table class="table table-striped">
+                <thead>
+                    <tr>
+                    <th scope="col">N°</th>
+                    <th scope="col">N° étudiant</th>
+                    <th scope="col">N° professeur</th>
+                    <th scope="col">N° tuteur</th>
+                    <th scope="col">N° entreprise</th>
+                    <th scope="col">Code type</th>
+                    <th scope="col">Année stage</th>
+                    <th scope="col">Compte rendu</th>
+                    </tr>
+                </thead>
+                <tbody *ngFor="let stage of listeStagesEtud">
+                    <tr>
+                    <td>{{stage.no_stage}}</td>
+                    <td>{{stage.etudiant.no_etudiant}}</td>
+                    <td>{{stage.professeur.no_professeur}}</td>
+                    <td>{{stage.tuteur.no_tuteur}}</td>
+                    <td>{{stage.entreprise.no_entreprise}}</td>
+                    <td>{{stage.type.code_type}}</td>
+                    <td>{{stage.annee_stage}}</td>
+                    <td>{{stage.compte_rendu_stage}}</td>
+                    </tr>
+                </tbody>
+            </table> 
+        </div>
+    </div>
 </div>
 
-<div *ngIf="professeur!=null">
-    <p>{{professeur.no_professeur}}</p>
-    <p>{{professeur.email_professeur}}</p>
+
+<div *ngIf="professeur!=null" class="blocEtud">
+    <div class="cardetud">
+        <p>Salut! {{professeur.qualite_professeur}} {{professeur.nom_professeur}}</p>
+        <p>{{professeur.email_professeur}}</p>
+    </div>
+    <p class="stageP">Voici la liste des stages que vous avez surveillé jusu'au présent :</p>
+    <div class="stage">
+        <div class="liste">
+            <table class="table table-striped">
+                <thead>
+                    <tr>
+                    <th scope="col">N°</th>
+                    <th scope="col">N° étudiant</th>
+                    <th scope="col">N° professeur</th>
+                    <th scope="col">N° tuteur</th>
+                    <th scope="col">N° entreprise</th>
+                    <th scope="col">Code type</th>
+                    <th scope="col">Année stage</th>
+                    <th scope="col">Compte rendu</th>
+                    </tr>
+                </thead>
+                <tbody *ngFor="let stage of listeStagesProf">
+                    <tr>
+                        <td>{{stage.no_stage}}</td>
+                        <td>{{stage.etudiant.no_etudiant}}</td>
+                        <td>{{stage.professeur.no_professeur}}</td>
+                        <td>{{stage.tuteur.no_tuteur}}</td>
+                        <td>{{stage.entreprise.no_entreprise}}</td>
+                        <td>{{stage.type.code_type}}</td>
+                        <td>{{stage.annee_stage}}</td>
+                        <td>{{stage.compte_rendu_stage}}</td>
+                    </tr>
+                </tbody>
+            </table> 
+        </div>
+    </div>
 </div>
 
-<div *ngIf="professeur===null && etudiant===null">
-    <p>User not found!</p>
+<div *ngIf="professeur===null && etudiant===null" class="error">
+    <div class="diag">
+        <p>Pas d'utilisateur associé au email saisi, veuillez saisir une adresse existante</p>
+        <button routerLink="/identification" class="butn">Retour</button>
+    </div>
 </div>
-<!-- 
-<div>
-    <button (click)="infos()">
-        ara a zbi
-    </button>
-</div> -->

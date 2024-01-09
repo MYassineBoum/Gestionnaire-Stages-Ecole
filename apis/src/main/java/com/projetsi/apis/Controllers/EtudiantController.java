@@ -2,7 +2,10 @@ package com.projetsi.apis.Controllers;
 
 import com.projetsi.apis.Entities.Etudiant;
 import com.projetsi.apis.Entities.Promo;
+import com.projetsi.apis.Entities.Stage;
 import com.projetsi.apis.Repositories.EtudiantRepository;
+import com.projetsi.apis.Repositories.StageRepository;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -15,6 +18,9 @@ import java.util.Optional;
 public class EtudiantController {
     @Autowired
     private EtudiantRepository etudiantRepository;
+
+    @Autowired
+    private StageRepository stageRepository;
 
     @PostMapping("/api/etudiant/ajouter")
     public ResponseEntity<Etudiant> ajouterEtudiant(@RequestBody Etudiant etudiant) {
@@ -48,6 +54,16 @@ public class EtudiantController {
     @GetMapping("/api/etudiant/get/promo")
     public ResponseEntity<List<Etudiant>> get(@RequestParam("annee_promo") Long annee_promo) {
         return ResponseEntity.ok(etudiantRepository.findByPromo(annee_promo));
+    }
+    
+    @GetMapping("/api/etudiant/get/stage")
+    public ResponseEntity<List<Stage>> getStageEtudiant(@RequestParam("no_etudiant") Long no_etudiant) {
+        return ResponseEntity.ok(stageRepository.findStageEtudiant(no_etudiant));
+    }
+
+    @GetMapping("/api/etudiant/get/stageProf")
+    public ResponseEntity<List<Stage>> getStageProfesseur(@RequestParam("no_professeur") Long no_professeur) {
+        return ResponseEntity.ok(stageRepository.findStageProfesseur(no_professeur));
     }
 
 }
