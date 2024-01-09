@@ -2,7 +2,6 @@
     display: flex;
     flex-direction: column;
     align-items: center;
-    justify-content: center;
     font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
     padding: 50px;
 }
@@ -30,14 +29,42 @@
 
 .filtre {
     display: flex;
-    flex-direction: column;
-    align-items: start;
+    flex-direction: row;
+    align-items: center;
     justify-content: center;
     margin-bottom: 40px;
 }
 
+.filtre .mot-clé {
+    display: flex;
+    flex-direction: column;
+    align-items: start;
+}
+
+.filtre .promo {
+    display: flex;
+    flex-direction: column;
+    align-items: start;
+    margin-left: 80px;
+}
+
+.filtre mat-select {
+    text-align: center;
+    width: 200px;
+    height: 40px;
+    font-size: 24px;
+    border-radius: 5px;
+    border: 1px solid #B6BBC4;
+    outline: none;
+}
+
+::ng-deep .mat-select-placeholder {
+    padding: 30px;
+}
+  
+
 .filtre input {
-    width: 800px;
+    width: 650px;
     height: 30px;
     border-radius: 5px;
     border: 1px solid #B6BBC4;

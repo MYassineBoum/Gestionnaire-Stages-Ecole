@@ -22,6 +22,7 @@ public class StatistiquesController {
         stats.put("totalTuteurs", statistiques.getTotalTuteurs());
         stats.put("totalEntreprises", statistiques.getTotalEntreprises());
         stats.put("totalStages", statistiques.getTotalStages());
+        stats.put("totalPromotions", statistiques.getTotalPromotions());
         return stats;
     }
 }

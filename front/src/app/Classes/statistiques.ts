@@ -4,4 +4,5 @@ export class Statistiques {
     totalTuteurs!: number;
     totalEntreprises!: number;
     totalStages!: number;
+    totalPromotions!: number;
 }

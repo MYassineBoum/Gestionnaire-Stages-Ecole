@@ -1,11 +1,20 @@
 <div class="etudiant">
     <p>Ajouter ou consulter la liste des étudiants.</p>
     <div class="ajout">
-        <button>Ajouter</button>
+        <button (click)="ajouterEtu()">Ajouter</button>
     </div>
     <div class="filtre">
+      <div class="mot-clé">
         <label for="">Filtrer la recherche</label>
         <input type="text" placeholder="Rechercher par des mots clés">
+      </div>
+      <div class="promo">
+        <label for="">Filtrer par promotion</label>
+        <mat-select [(ngModel)]="anneePromo" placeholder="Choisir l'année" (ngModelChange)="filterParPromo()">
+          <mat-option value="Toutes">Toutes</mat-option>
+          <mat-option *ngFor="let promo of listePromos" [value]="promo.annee_promo">{{promo.annee_promo}}</mat-option>
+        </mat-select>
+      </div>
     </div>
     <div class="liste">
         <table class="table table-striped">
@@ -23,6 +32,7 @@
                 <th scope="col">Sexe</th>
                 <th scope="col">Téléphone</th>
                 <th scope="col">Mention</th>
+                <th scope="col">Promotion</th>
                 <th scope="col">Actions</th>
               </tr>
             </thead>
@@ -40,6 +50,7 @@
                 <td>{{etudiant.sexe_etudiant}}</td>
                 <td>{{etudiant.telephone_etudiant}}</td>
                 <td>{{etudiant.mention_etudiant}}</td>
+                <td>{{etudiant.annee_promo}}</td>
                 <td>
                   <mat-icon>edit</mat-icon>
                   <mat-icon>delete</mat-icon>
@@ -49,4 +60,3 @@
           </table> 
     </div>
 </div>
-<app-footer></app-footer>

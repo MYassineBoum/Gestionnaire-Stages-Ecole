@@ -2,7 +2,10 @@
     <p>Ajouter un professeur.</p>
     <mat-form-field>
         <mat-label>Qualité</mat-label>
-        <input matInput [(ngModel)]="newProf.qualite_professeur">
+        <select matNativeControl [(ngModel)]="newProf.qualite_professeur">
+            <option value="Mr">Mr</option>
+            <option value="Mme">Mme</option>
+        </select>
     </mat-form-field>
     <mat-form-field>
         <mat-label>Nom</mat-label>

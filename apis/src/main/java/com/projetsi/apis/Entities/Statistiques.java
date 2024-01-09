@@ -33,4 +33,9 @@ public class Statistiques {
         String sql = "SELECT COUNT(*) FROM Stage";
         return jdbcTemplate.queryForObject(sql, Integer.class);
     }
+
+    public int getTotalPromotions() {
+        String sql = "SELECT COUNT(*) FROM Promo";
+        return jdbcTemplate.queryForObject(sql, Integer.class);
+    }
 }

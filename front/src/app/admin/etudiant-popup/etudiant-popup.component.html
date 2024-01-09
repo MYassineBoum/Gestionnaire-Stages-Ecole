@@ -1,0 +1,58 @@
+<div mat-dialog-content>
+    <p>Ajouter un étudiant.</p>
+    <mat-form-field>
+        <mat-label>Qualité</mat-label>
+        <select matNativeControl [(ngModel)]="newEtu.qualite_etudiant">
+            <option value="Mr">Mr</option>
+            <option value="Mme">Mme</option>
+        </select>
+    </mat-form-field>
+    <mat-form-field>
+        <mat-label>Nom</mat-label>
+        <input matInput [(ngModel)]="newEtu.nom_etudiant">
+    </mat-form-field>
+    <mat-form-field>
+        <mat-label>Prenom</mat-label>
+        <input matInput [(ngModel)]="newEtu.prenom_etudiant">
+    </mat-form-field>
+    <mat-form-field>
+        <mat-label>Email</mat-label>
+        <input matInput [(ngModel)]="newEtu.email_etudiant">
+    </mat-form-field>
+    <mat-form-field>
+        <mat-label>Adresse</mat-label>
+        <input matInput [(ngModel)]="newEtu.adresse_etudiant">
+    </mat-form-field>
+    <mat-form-field>
+        <mat-label>Code postal</mat-label>
+        <input matInput [(ngModel)]="newEtu.code_postal_etudiant">
+    </mat-form-field>
+    <mat-form-field>
+        <mat-label>Ville</mat-label>
+        <input matInput [(ngModel)]="newEtu.ville_etudiant">
+    </mat-form-field>
+    <mat-form-field>
+        <mat-label>Date de naissance</mat-label>
+        <input matInput type="date" [(ngModel)]="newEtu.date_naissance_etudiant">
+    </mat-form-field>
+    <mat-form-field>
+        <mat-label>Sexe</mat-label>
+        <input matInput [(ngModel)]="newEtu.sexe_etudiant">
+    </mat-form-field>
+    <mat-form-field>
+        <mat-label>Telephone</mat-label>
+        <input matInput [(ngModel)]="newEtu.telephone_etudiant">
+    </mat-form-field>
+    <mat-form-field>
+        <mat-label>Mention</mat-label>
+        <input matInput [(ngModel)]="newEtu.mention_etudiant">
+    </mat-form-field>
+    <mat-form-field>
+        <mat-label>Promotion</mat-label>
+        <input matInput type="number" [(ngModel)]="newEtu.annee_promo">
+    </mat-form-field>
+</div>
+<div mat-dialog-actions>
+    <button mat-button mat-dialog-close>Annuler</button>
+    <button mat-button mat-dialog-close (click)="approuverAjout()">Ok</button>
+</div>

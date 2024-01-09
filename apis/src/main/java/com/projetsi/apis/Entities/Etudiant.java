@@ -29,4 +29,6 @@ public class Etudiant {
     private String telephone_etudiant;
     private String mention_etudiant;
     private String qualite_etudiant;
+    private Long annee_promo;
+
 }

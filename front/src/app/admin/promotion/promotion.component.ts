@@ -27,7 +27,6 @@ export class PromotionComponent implements OnInit {
         next: resp => {
           console.log(resp);
           this.listePromos = resp as Promo[];
-          console.log("liste : " + this.listePromos);
         },
         error: err => {
           console.log(err);
@@ -37,7 +36,17 @@ export class PromotionComponent implements OnInit {
   }
 
   ajouterPromo() {
-    this.dialog.open(PromotionPopupComponent);
+    const dialogBox = this.dialog.open(PromotionPopupComponent);
+    dialogBox.afterClosed().subscribe(
+      {
+        next: () => {
+          this.fetchPromotions();
+        },
+        error: err => {
+          console.log(err);
+        }
+      }
+    );
   }
 
 }

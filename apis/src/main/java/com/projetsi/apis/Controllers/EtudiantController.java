@@ -1,6 +1,7 @@
 package com.projetsi.apis.Controllers;
 
 import com.projetsi.apis.Entities.Etudiant;
+import com.projetsi.apis.Entities.Promo;
 import com.projetsi.apis.Repositories.EtudiantRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
@@ -42,6 +43,11 @@ public class EtudiantController {
     @GetMapping("/api/etudiant/get")
     public ResponseEntity<Etudiant> getEtudiant(@RequestParam("email_etudiant") String email_etudiant) {
         return ResponseEntity.ok(etudiantRepository.findByEmail(email_etudiant));
+    }
+
+    @GetMapping("/api/etudiant/get/promo")
+    public ResponseEntity<List<Etudiant>> get(@RequestParam("annee_promo") Long annee_promo) {
+        return ResponseEntity.ok(etudiantRepository.findByPromo(annee_promo));
     }
 
 }

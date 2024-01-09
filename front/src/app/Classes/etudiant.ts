@@ -7,10 +7,10 @@ export class Etudiant {
     adresse_etudiant!:string;
     code_postal_etudiant!:string;
     ville_etudiant!:string;
-    date_naissance_etudiant!:string;
+    date_naissance_etudiant!:Date;
     sexe_etudiant!:string;
     telephone_etudiant!:string;
     mention_etudiant!:string;
     qualite_etudiant!:string;
-
+    annee_promo!:number;
 }

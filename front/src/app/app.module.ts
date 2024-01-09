@@ -27,6 +27,7 @@ import { TypeComponent } from './admin/type/type.component';
 import { AppHttpInterceptor } from './interceptors/app-http.interceptor';
 import { PromotionPopupComponent } from './admin/promotion-popup/promotion-popup.component';
 import { ProfesseurPopupComponent } from './admin/professeur-popup/professeur-popup.component';
+import { EtudiantPopupComponent } from './admin/etudiant-popup/etudiant-popup.component';
 
 @NgModule({
   declarations: [
@@ -47,7 +48,8 @@ import { ProfesseurPopupComponent } from './admin/professeur-popup/professeur-po
     PromotionComponent,
     TypeComponent,
     PromotionPopupComponent,
-    ProfesseurPopupComponent
+    ProfesseurPopupComponent,
+    EtudiantPopupComponent
   ],
   imports: [
     BrowserModule,
