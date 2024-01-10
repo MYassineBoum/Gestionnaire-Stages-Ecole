@@ -31,4 +31,6 @@ public class Etudiant {
     private String qualite_etudiant;
     private Long annee_promo;
 
+//    @OneToOne(mappedBy = "etudiant")
+//    private Stage stage;
 }

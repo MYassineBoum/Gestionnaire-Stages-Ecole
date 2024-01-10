@@ -1,0 +1,47 @@
+<div mat-dialog-content>
+    <p>Ajouter un professeur.</p>
+    <mat-form-field>
+        <mat-label>N°</mat-label>
+        <input matInput [(ngModel)]="newEnt.no_entreprise">
+    </mat-form-field>
+    <mat-form-field>
+        <mat-label>Forme juridique</mat-label>
+        <input matInput [(ngModel)]="newEnt.forme_juridique_entreprise">
+    </mat-form-field>
+    <mat-form-field>
+        <mat-label>Raison sociale</mat-label>
+        <input matInput [(ngModel)]="newEnt.raison_sociale_entreprise">
+    </mat-form-field>
+    <mat-form-field>
+        <mat-label>Adresse</mat-label>
+        <input matInput [(ngModel)]="newEnt.adresse_entreprise">
+    </mat-form-field>
+    <mat-form-field>
+        <mat-label>Code postal</mat-label>
+        <input matInput [(ngModel)]="newEnt.code_postal_entreprise">
+    </mat-form-field>
+    <mat-form-field>
+        <mat-label>Ville</mat-label>
+        <input matInput [(ngModel)]="newEnt.ville_entreprise">
+    </mat-form-field>
+    <mat-form-field>
+        <mat-label>Téléphone</mat-label>
+        <input matInput [(ngModel)]="newEnt.telephone_entreprise">
+    </mat-form-field>
+    <mat-form-field>
+        <mat-label>Fax</mat-label>
+        <input matInput [(ngModel)]="newEnt.fax_entreprise">
+    </mat-form-field>
+    <mat-form-field>
+        <mat-label>Contact</mat-label>
+        <input matInput [(ngModel)]="newEnt.contact_entreprise">
+    </mat-form-field>
+    <mat-form-field>
+        <mat-label>Téléphone contact</mat-label>
+        <input matInput [(ngModel)]="newEnt.tel_contact_entreprise">
+    </mat-form-field>
+</div>
+<div mat-dialog-actions>
+    <button mat-button mat-dialog-close>Annuler</button>
+    <button mat-button mat-dialog-close (click)="approuverAjout()">Ok</button>
+</div>

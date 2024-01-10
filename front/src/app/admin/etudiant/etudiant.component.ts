@@ -18,6 +18,7 @@ export class EtudiantComponent implements OnInit {
   listePromos !: Promo[];
   promo !: Promo;
   anneePromo : string = "";
+  searchEtudiant = '';
 
   constructor(private etudiantService: EtudiantService, private promotionService: PromotionService, private dialog: MatDialog) { 
     this.etudiant = new Etudiant();
@@ -88,6 +89,17 @@ export class EtudiantComponent implements OnInit {
     dialogBox.afterClosed().subscribe(
       {
         next: () => {
+          this.promotionService.fetchPromotions().subscribe(
+            {
+              next: resp => {
+                console.log(resp);
+                this.listePromos = resp as Promo[];
+              },
+              error: err => {
+                console.log(err);
+              }
+            }
+          );
           this.fetchEtudiants();
         },
         error: err => {

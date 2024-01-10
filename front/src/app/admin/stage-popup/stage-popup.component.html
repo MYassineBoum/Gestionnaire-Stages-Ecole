@@ -1,0 +1,41 @@
+<div mat-dialog-content>
+    <p>Ajouter un stage.</p>
+    <mat-form-field>
+        <mat-label>N° Etudiant</mat-label>
+        <mat-select [(ngModel)]="etudiant" placeholder="Choisir">
+            <mat-option *ngFor="let etu of listeEtudiants" [value]="etu">{{etu.no_etudiant}}</mat-option>
+        </mat-select>
+    </mat-form-field>
+    <mat-form-field>
+        <mat-label>N° Professeur</mat-label>
+        <mat-select [(ngModel)]="professeur" placeholder="Choisir">
+            <mat-option *ngFor="let prof of listeProfesseurs" [value]="prof">{{prof.no_professeur}}</mat-option>
+        </mat-select>
+    </mat-form-field>
+    <mat-form-field>
+        <mat-label>N° Tuteur</mat-label>
+        <mat-select [(ngModel)]="tuteur" placeholder="Choisir">
+            <mat-option *ngFor="let tut of listeTuteurs" [value]="tut">{{tut.no_tuteur}}</mat-option>
+        </mat-select>
+    </mat-form-field>
+    <mat-form-field>
+        <mat-label>N° Entreprise</mat-label>
+        <mat-select [(ngModel)]="entreprise" placeholder="Choisir">
+            <mat-option *ngFor="let entrep of listeEntreprises" [value]="entrep">{{entrep.no_entreprise}}</mat-option>
+        </mat-select>
+    </mat-form-field>
+    <mat-form-field>
+        <mat-label>Code type</mat-label>
+        <mat-select [(ngModel)]="type" placeholder="Choisir">
+            <mat-option *ngFor="let tp of listeTypes" [value]="tp">{{tp.code_type}}</mat-option>
+        </mat-select>
+    </mat-form-field>
+    <mat-form-field>
+        <mat-label>Année stage</mat-label>
+        <input matNativeControl [(ngModel)]="newStage.annee_stage">
+    </mat-form-field>
+</div>
+<div mat-dialog-actions>
+    <button mat-button mat-dialog-close>Annuler</button>
+    <button mat-button mat-dialog-close (click)="approuverAjout()">Ok</button>
+</div>

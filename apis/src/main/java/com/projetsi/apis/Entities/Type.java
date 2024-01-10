@@ -3,6 +3,8 @@ package com.projetsi.apis.Entities;
 import jakarta.persistence.*;
 import lombok.*;
 
+import java.util.List;
+
 @Data
 @Getter
 @Setter
@@ -16,4 +18,10 @@ public class Type {
     private Integer code_type;
 
     private Integer nb_semaines;
+
+//    @OneToMany(mappedBy = "type")
+//    private List<Stage> stages;
+
+//    @OneToOne(mappedBy = "type")
+//    private Stage stage;
 }

@@ -6,7 +6,7 @@
     <div class="filtre">
       <div class="mot-clé">
         <label for="">Filtrer la recherche</label>
-        <input type="text" placeholder="Rechercher par des mots clés">
+        <input type="text" placeholder="Rechercher par des mots clés" [(ngModel)]="searchEtudiant">
       </div>
       <div class="promo">
         <label for="">Filtrer par promotion</label>
@@ -36,7 +36,7 @@
                 <th scope="col">Actions</th>
               </tr>
             </thead>
-            <tbody *ngFor="let etudiant of listeEtudiants">
+            <tbody *ngFor="let etudiant of listeEtudiants | searchFilter: searchEtudiant">
               <tr>
                 <td>{{etudiant.no_etudiant}}</td>
                 <td>{{etudiant.qualite_etudiant}}</td>

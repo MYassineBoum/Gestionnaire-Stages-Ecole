@@ -26,7 +26,6 @@ export class EtudiantPopupComponent {
           this.promotionService.modifierPromotion(this.newEtu.annee_promo).subscribe(
             {
               next: resp => {
-                console.log("hhhhh");
                 console.log(resp);
               },
               error: err => {

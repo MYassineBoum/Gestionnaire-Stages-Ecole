@@ -1,5 +1,8 @@
 import { Component, OnInit } from '@angular/core';
+import { MatDialog } from '@angular/material/dialog';
+import { Entreprise } from 'src/app/Classes/entreprise';
 import { EntrepriseService } from 'src/app/services/entreprise.service';
+import { EntreprisePopupComponent } from '../entreprise-popup/entreprise-popup.component';
 
 @Component({
   selector: 'app-entreprise',
@@ -8,9 +11,12 @@ import { EntrepriseService } from 'src/app/services/entreprise.service';
 })
 export class EntrepriseComponent implements OnInit {
 
-  listeEntreprises : any = [];
+  listeEntreprises !: Entreprise[];
+  searchEntreprise = '';
 
-  constructor(private entrepriseService: EntrepriseService) { }
+  constructor(private entrepriseService: EntrepriseService, private dialog: MatDialog) { 
+    this.listeEntreprises = [];
+  }
 
   ngOnInit(): void {
     this.fetchEntreprises();
@@ -21,7 +27,24 @@ export class EntrepriseComponent implements OnInit {
       {
         next: resp => {
           console.log(resp);
-          this.listeEntreprises.push(resp);
+          this.listeEntreprises = resp as Entreprise[];
+        },
+        error: err => {
+          console.log(err);
+        }
+      }
+    );
+  }
+
+  ajouterEntreprise() {
+    const dialogBox = this.dialog.open(EntreprisePopupComponent, {
+      width: '500px',
+    });
+
+    dialogBox.afterClosed().subscribe(
+      {
+        next: () => {
+          this.fetchEntreprises();
         },
         error: err => {
           console.log(err);

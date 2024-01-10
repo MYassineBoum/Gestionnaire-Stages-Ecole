@@ -1,11 +1,11 @@
 <div class="entreprise">
     <p>Ajouter ou consulter la liste des entreprises.</p>
     <div class="ajout">
-        <button>Ajouter</button>
+        <button (click)="ajouterEntreprise()">Ajouter</button>
     </div>
     <div class="filtre">
       <label for="">Filtrer la recherche</label>
-      <input type="text" placeholder="Rechercher par des mots clés">
+      <input type="text" placeholder="Rechercher par des mots clés" [(ngModel)]="searchEntreprise">
     </div>
     <div class="liste">
         <table class="table table-striped">
@@ -24,7 +24,7 @@
                 <th scope="col">Actions</th>
               </tr>
             </thead>
-            <tbody *ngFor="let entreprise of listeEntreprises">
+            <tbody *ngFor="let entreprise of listeEntreprises | searchFilter: searchEntreprise">
               <td>{{entreprise.no_entreprise}}</td>
               <td>{{entreprise.forme_juridique_entreprise}}</td>
               <td>{{entreprise.raison_sociale_entreprise}}</td>

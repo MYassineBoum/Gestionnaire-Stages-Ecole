@@ -1,5 +1,8 @@
 import { Component, OnInit } from '@angular/core';
+import { MatDialog } from '@angular/material/dialog';
+import { Tuteur } from 'src/app/Classes/tuteur';
 import { TuteurService } from 'src/app/services/tuteur.service';
+import { TuteurPopupComponent } from '../tuteur-popup/tuteur-popup.component';
 
 @Component({
   selector: 'app-tuteur',
@@ -8,9 +11,12 @@ import { TuteurService } from 'src/app/services/tuteur.service';
 })
 export class TuteurComponent implements OnInit {
 
-  listeTuteurs : any = [];
+  listeTuteurs !: Tuteur[];
+  searchTuteur = '';
 
-  constructor(private tuteurService: TuteurService) { }
+  constructor(private tuteurService: TuteurService, private dialog: MatDialog) { 
+    this.listeTuteurs = [];
+  }
 
   ngOnInit(): void {
     this.fetchTuteurs();
@@ -21,7 +27,24 @@ export class TuteurComponent implements OnInit {
       {
         next: resp => {
           console.log(resp);
-          this.listeTuteurs.push(resp);
+          this.listeTuteurs = resp as Tuteur[];
+        },
+        error: err => {
+          console.log(err);
+        }
+      }
+    );
+  }
+
+  ajouterTuteur() {
+    const dialogBox = this.dialog.open(TuteurPopupComponent, {
+      width: '500px',
+    });
+
+    dialogBox.afterClosed().subscribe(
+      {
+        next: () => {
+          this.fetchTuteurs();
         },
         error: err => {
           console.log(err);

@@ -1,0 +1,26 @@
+<div mat-dialog-content>
+    <p>Ajouter un professeur.</p>
+    <mat-form-field>
+        <mat-label>Qualité</mat-label>
+        <select matNativeControl [(ngModel)]="newTut.qualite_tuteur">
+            <option value="Mr">Mr</option>
+            <option value="Mme">Mme</option>
+        </select>
+    </mat-form-field>
+    <mat-form-field>
+        <mat-label>Nom</mat-label>
+        <input matInput [(ngModel)]="newTut.nom_tuteur">
+    </mat-form-field>
+    <mat-form-field>
+        <mat-label>Prenom</mat-label>
+        <input matInput [(ngModel)]="newTut.prenom_tuteur">
+    </mat-form-field>
+    <mat-form-field>
+        <mat-label>Téléphone</mat-label>
+        <input matInput [(ngModel)]="newTut.telephone_tuteur">
+    </mat-form-field>
+</div>
+<div mat-dialog-actions>
+    <button mat-button mat-dialog-close>Annuler</button>
+    <button mat-button mat-dialog-close (click)="approuverAjout()">Ok</button>
+</div>

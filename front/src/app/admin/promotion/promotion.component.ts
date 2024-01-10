@@ -27,6 +27,7 @@ export class PromotionComponent implements OnInit {
         next: resp => {
           console.log(resp);
           this.listePromos = resp as Promo[];
+          this.sortPromotions();
         },
         error: err => {
           console.log(err);
@@ -47,6 +48,10 @@ export class PromotionComponent implements OnInit {
         }
       }
     );
+  }
+
+  sortPromotions() {
+    this.listePromos.sort((a, b) => b.annee_promo - a.annee_promo);
   }
 
 }

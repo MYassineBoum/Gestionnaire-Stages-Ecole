@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { TypeService } from 'src/app/services/type.service';
+import { Type } from 'src/app/Classes/type';
 
 @Component({
   selector: 'app-type',
@@ -8,20 +9,22 @@ import { TypeService } from 'src/app/services/type.service';
 })
 export class TypeComponent implements OnInit {
 
-  listeTypes : any = [];
+  listeTypes !: Type[];
 
-  constructor(private typeService: TypeService) { }
-
-  ngOnInit(): void {
-    this.fetchTypes();
+  constructor(private typeService: TypeService) { 
+    this.listeTypes = [];
   }
 
-  fetchTypes() {
+  ngOnInit(): void {
+    this.fetchPromotions();
+  }
+
+  fetchPromotions() {
     this.typeService.fetchTypes().subscribe(
       {
         next: resp => {
           console.log(resp);
-          this.listeTypes.push(resp);
+          this.listeTypes = resp as Type[];
         },
         error: err => {
           console.log(err);

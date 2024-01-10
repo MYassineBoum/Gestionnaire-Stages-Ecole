@@ -29,4 +29,7 @@ public class Professeur {
     private String tel_domicile_professeur;
     private Date date_embauche_professeur;
     private Date date_depart_professeur;
+
+//    @OneToOne(mappedBy = "professeur")
+//    private Stage stage;
 }

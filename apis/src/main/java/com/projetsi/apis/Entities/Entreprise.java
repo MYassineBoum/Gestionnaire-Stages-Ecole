@@ -24,4 +24,7 @@ public class Entreprise {
     private String fax_entreprise;
     private String contact_entreprise;
     private String tel_contact_entreprise;
+
+//    @OneToOne(mappedBy = "entreprise")
+//    private Stage stage;
 }

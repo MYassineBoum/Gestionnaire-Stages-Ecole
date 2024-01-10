@@ -15,28 +15,29 @@ import lombok.*;
 public class Stage {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @Column(name = "no_stage")
     private Long no_stage;
 
-    @OneToOne(cascade = CascadeType.ALL)
+    @ManyToOne
     @JoinColumn(name = "no_etudiant")
     private Etudiant etudiant;
 
-    @OneToOne(cascade = CascadeType.ALL)
+    @ManyToOne
     @JoinColumn(name = "no_professeur")
     private Professeur professeur;
 
-    @OneToOne(cascade = CascadeType.ALL)
+    @ManyToOne
     @JoinColumn(name = "no_tuteur")
     private Tuteur tuteur;
 
-    @OneToOne(cascade = CascadeType.ALL)
+    @ManyToOne
     @JoinColumn(name = "no_entreprise")
     private Entreprise entreprise;
 
-    @OneToOne(cascade = CascadeType.ALL)
+    @ManyToOne
     @JoinColumn(name = "code_type")
     private Type type;
 
-    private Integer annee_stage;
+    private int annee_stage;
     private String compte_rendu_stage;
 }

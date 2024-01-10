@@ -28,6 +28,10 @@ import { AppHttpInterceptor } from './interceptors/app-http.interceptor';
 import { PromotionPopupComponent } from './admin/promotion-popup/promotion-popup.component';
 import { ProfesseurPopupComponent } from './admin/professeur-popup/professeur-popup.component';
 import { EtudiantPopupComponent } from './admin/etudiant-popup/etudiant-popup.component';
+import { SearchFilterPipe } from './admin/search-filter.pipe';
+import { StagePopupComponent } from './admin/stage-popup/stage-popup.component';
+import { TuteurPopupComponent } from './admin/tuteur-popup/tuteur-popup.component';
+import { EntreprisePopupComponent } from './admin/entreprise-popup/entreprise-popup.component';
 
 @NgModule({
   declarations: [
@@ -49,7 +53,11 @@ import { EtudiantPopupComponent } from './admin/etudiant-popup/etudiant-popup.co
     TypeComponent,
     PromotionPopupComponent,
     ProfesseurPopupComponent,
-    EtudiantPopupComponent
+    EtudiantPopupComponent,
+    SearchFilterPipe,
+    StagePopupComponent,
+    TuteurPopupComponent,
+    EntreprisePopupComponent
   ],
   imports: [
     BrowserModule,

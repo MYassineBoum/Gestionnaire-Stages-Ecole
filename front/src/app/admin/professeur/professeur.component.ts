@@ -12,6 +12,7 @@ import { Professeur } from 'src/app/Classes/professeur';
 export class ProfesseurComponent implements OnInit {
 
   listeProfesseurs !: Professeur[];
+  searchProfesseur = '';
 
   constructor(private professeurService: ProfesseurService, private dialog: MatDialog) { 
     this.listeProfesseurs = [];

@@ -1,11 +1,11 @@
 <div class="stage">
     <p>Ajouter ou consulter la liste des stages.</p>
     <div class="ajout">
-        <button>Ajouter</button>
+        <button (click)="ajouterStage()">Ajouter</button>
     </div>
     <div class="filtre">
       <label for="">Filtrer la recherche</label>
-      <input type="text" placeholder="Rechercher par des mots clés">
+      <input type="text" placeholder="Rechercher par des mots clés" [(ngModel)]="searchStage">
     </div>
     <div class="liste">
         <table class="table table-striped">
@@ -22,16 +22,17 @@
                 <th scope="col">Actions</th>
               </tr>
             </thead>
-            <tbody *ngFor="let stage of listeStages">
+            <tbody *ngFor="let stage of listeStages | searchFilter: searchStage">
               <tr>
                 <td>{{stage.no_stage}}</td>
-                <td>{{stage.no_etudiant}}</td>
-                <td>{{stage.no_professeur}}</td>
-                <td>{{stage.no_tuteur}}</td>
-                <td>{{stage.no_entreprise}}</td>
-                <td>{{stage.code_type}}</td>
+                <td>{{stage.etudiant?.no_etudiant}}</td>
+                <td>{{stage.professeur?.no_professeur}}</td>
+                <td>{{stage.tuteur?.no_tuteur}}</td>
+                <td>{{stage.entreprise?.no_entreprise}}</td>
+                <td>{{stage.type?.code_type}}</td>
                 <td>{{stage.annee_stage}}</td>
-                <td>{{stage.compte_rendu_stage}}</td>
+                <td *ngIf="stage.compte_rendu_stage != null">{{stage.compte_rendu_stage}}</td>
+                <td *ngIf="stage.compte_rendu_stage == null">Bientot disponible</td>
                 <td>
                   <mat-icon>edit</mat-icon>
                   <mat-icon>delete</mat-icon>

@@ -20,4 +20,7 @@ public class Tuteur {
     private String nom_tuteur;
     private String prenom_tuteur;
     private String telephone_tuteur;
+
+//    @OneToOne(mappedBy = "tuteur")
+//    private Stage stage;
 }

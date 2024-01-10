@@ -1,5 +1,8 @@
 import { Component, OnInit } from '@angular/core';
+import { MatDialog } from '@angular/material/dialog';
 import { StageService } from 'src/app/services/stage.service';
+import { StagePopupComponent } from '../stage-popup/stage-popup.component';
+import { Stages } from 'src/app/Classes/stages';
 
 @Component({
   selector: 'app-stage',
@@ -8,9 +11,12 @@ import { StageService } from 'src/app/services/stage.service';
 })
 export class StageComponent implements OnInit {
 
-  listeStages : any = [];
+  listeStages !: Stages[];
+  searchStage = '';
 
-  constructor(private stageService: StageService) { }
+  constructor(private stageService: StageService, private dialog: MatDialog) { 
+    this.listeStages = [];
+  }
 
   ngOnInit(): void {
     this.fetchStages();
@@ -21,7 +27,24 @@ export class StageComponent implements OnInit {
       {
         next: resp => {
           console.log(resp);
-          this.listeStages.push(resp);
+          this.listeStages = resp as Stages[];
+        },
+        error: err => {
+          console.log(err);
+        }
+      }
+    );
+  }
+
+  ajouterStage() {
+    const dialogBox = this.dialog.open(StagePopupComponent, {
+      width: '500px',
+    });
+
+    dialogBox.afterClosed().subscribe(
+      {
+        next: () => {
+          this.fetchStages();
         },
         error: err => {
           console.log(err);
