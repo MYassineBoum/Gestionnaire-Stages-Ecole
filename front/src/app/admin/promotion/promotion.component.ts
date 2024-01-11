@@ -54,4 +54,19 @@ export class PromotionComponent implements OnInit {
     this.listePromos.sort((a, b) => b.annee_promo - a.annee_promo);
   }
 
+  supprimerPromo(annee_promo: number) {
+    this.promotionService.supprimerPromotion(annee_promo).subscribe(
+      {
+        next: resp => {
+          console.log(resp);
+          alert("Promotion supprimée!");
+          this.fetchPromotions();
+        },
+        error: err => {
+          console.log(err);
+        }
+      }
+    );
+  }
+
 }

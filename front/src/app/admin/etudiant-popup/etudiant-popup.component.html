@@ -2,54 +2,59 @@
     <p>Ajouter un étudiant.</p>
     <mat-form-field>
         <mat-label>Qualité</mat-label>
-        <select matNativeControl [(ngModel)]="newEtu.qualite_etudiant">
+        <select matNativeControl [(ngModel)]="newEtu.qualite_etudiant" required>
             <option value="Mr">Mr</option>
             <option value="Mme">Mme</option>
         </select>
     </mat-form-field>
     <mat-form-field>
         <mat-label>Nom</mat-label>
-        <input matInput [(ngModel)]="newEtu.nom_etudiant">
+        <input matInput [(ngModel)]="newEtu.nom_etudiant" required>
     </mat-form-field>
     <mat-form-field>
         <mat-label>Prenom</mat-label>
-        <input matInput [(ngModel)]="newEtu.prenom_etudiant">
+        <input matInput [(ngModel)]="newEtu.prenom_etudiant" required>
     </mat-form-field>
     <mat-form-field>
         <mat-label>Email</mat-label>
-        <input matInput [(ngModel)]="newEtu.email_etudiant">
+        <input matInput [(ngModel)]="newEtu.email_etudiant" required>
     </mat-form-field>
     <mat-form-field>
         <mat-label>Adresse</mat-label>
-        <input matInput [(ngModel)]="newEtu.adresse_etudiant">
+        <input matInput [(ngModel)]="newEtu.adresse_etudiant" required>
     </mat-form-field>
     <mat-form-field>
         <mat-label>Code postal</mat-label>
-        <input matInput [(ngModel)]="newEtu.code_postal_etudiant">
+        <input matInput [(ngModel)]="newEtu.code_postal_etudiant" required>
     </mat-form-field>
     <mat-form-field>
         <mat-label>Ville</mat-label>
-        <input matInput [(ngModel)]="newEtu.ville_etudiant">
+        <input matInput [(ngModel)]="newEtu.ville_etudiant" required>
     </mat-form-field>
     <mat-form-field>
         <mat-label>Date de naissance</mat-label>
-        <input matInput type="date" [(ngModel)]="newEtu.date_naissance_etudiant">
+        <input matInput type="date" [(ngModel)]="newEtu.date_naissance_etudiant" required>
     </mat-form-field>
     <mat-form-field>
         <mat-label>Sexe</mat-label>
-        <input matInput [(ngModel)]="newEtu.sexe_etudiant">
+        <select matNativeControl [(ngModel)]="newEtu.sexe_etudiant" required>
+            <option value="M">M</option>
+            <option value="F">F</option>
+        </select>
     </mat-form-field>
     <mat-form-field>
         <mat-label>Telephone</mat-label>
-        <input matInput [(ngModel)]="newEtu.telephone_etudiant">
+        <input matInput [(ngModel)]="newEtu.telephone_etudiant" required>
     </mat-form-field>
     <mat-form-field>
         <mat-label>Mention</mat-label>
-        <input matInput [(ngModel)]="newEtu.mention_etudiant">
+        <input matInput [(ngModel)]="newEtu.mention_etudiant" required>
     </mat-form-field>
     <mat-form-field>
         <mat-label>Promotion</mat-label>
-        <input matInput type="number" [(ngModel)]="newEtu.annee_promo">
+        <mat-select [(ngModel)]="promo" placeholder="Choisir">
+            <mat-option *ngFor="let promo of listePromos" [value]="promo">{{promo.annee_promo}}</mat-option>
+        </mat-select>
     </mat-form-field>
 </div>
 <div mat-dialog-actions>

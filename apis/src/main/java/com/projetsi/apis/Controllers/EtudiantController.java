@@ -27,18 +27,11 @@ public class EtudiantController {
         return ResponseEntity.ok(etudiantRepository.save(etudiant));
     }
 
-    @PostMapping("/api/etudiant/supprimer")
+    @DeleteMapping("/api/etudiant/supprimer/{no_etudiant}")
     public ResponseEntity<String> supprimerEtudiant(@PathVariable("no_etudiant") Long no_etudiant) {
         Optional<Etudiant> etudiant = etudiantRepository.findById(no_etudiant);
         etudiantRepository.delete(etudiant.get());
         return new ResponseEntity<String>("Etudiant supprimé!", HttpStatus.OK);
-    }
-
-    @PostMapping("/api/etudiant/modifier")
-    public ResponseEntity<Etudiant> modifierEtudiant(@RequestBody Etudiant etudiant) {
-        Optional<Etudiant> etudiantTrouvé = etudiantRepository.findById(etudiant.getNo_etudiant());
-        etudiantRepository.delete(etudiantTrouvé.get());
-        return ResponseEntity.ok(etudiantRepository.save(etudiant));
     }
 
     @GetMapping("/api/etudiant/liste")
@@ -46,13 +39,18 @@ public class EtudiantController {
         return ResponseEntity.ok(etudiantRepository.findAll());
     }
 
+    @PutMapping("/api/etudiant/modifier")
+    public ResponseEntity<Etudiant> modifierEtudiant(@RequestBody Etudiant etudiant) {
+        return ResponseEntity.ok(etudiantRepository.save(etudiant));
+    }
+
     @GetMapping("/api/etudiant/get")
     public ResponseEntity<Etudiant> getEtudiant(@RequestParam("email_etudiant") String email_etudiant) {
         return ResponseEntity.ok(etudiantRepository.findByEmail(email_etudiant));
     }
 
-    @GetMapping("/api/etudiant/get/promo")
-    public ResponseEntity<List<Etudiant>> get(@RequestParam("annee_promo") Long annee_promo) {
+    @GetMapping("/api/etudiant/promo")
+    public ResponseEntity<List<Etudiant>> get(@RequestParam Long annee_promo) {
         return ResponseEntity.ok(etudiantRepository.findByPromo(annee_promo));
     }
     

@@ -3,6 +3,7 @@ package com.projetsi.apis.Controllers;
 import java.util.List;
 import java.util.Optional;
 
+import com.projetsi.apis.Entities.Etudiant;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -20,16 +21,15 @@ public class EntrepriseController {
         return ResponseEntity.ok(entrepriseRepository.save(entreprise));
     }
 
-    @PostMapping("/api/entreprise/supprimer")
-    public ResponseEntity<String> supprimerentreprise(@PathVariable("no_entreprise") Long no_entreprise) {
-
+    @DeleteMapping("/api/entreprise/supprimer/{no_entreprise}")
+    public ResponseEntity<String> supprimerentreprise(@PathVariable("no_entreprise") String no_entreprise) {
+        Entreprise entreprise = entrepriseRepository.findByNoEntreprise(no_entreprise);
+        entrepriseRepository.delete(entreprise);
         return new ResponseEntity<String>("entreprise supprimé!", HttpStatus.OK);
     }
 
-    @PostMapping("/api/entreprise/modifier")
+    @PutMapping("/api/entreprise/modifier")
     public ResponseEntity<Entreprise> modifierentreprise(@RequestBody Entreprise entreprise) {
-        Optional<Entreprise> entrepriseTrouvé = entrepriseRepository.findById(entreprise.getNo_entreprise());
-        entrepriseRepository.delete(entrepriseTrouvé.get());
         return ResponseEntity.ok(entrepriseRepository.save(entreprise));
     }
 

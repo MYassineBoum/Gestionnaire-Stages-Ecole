@@ -108,4 +108,48 @@ export class EtudiantComponent implements OnInit {
       }
     );
   }
+
+  supprimerEtudiant(no_etudiant: number, promo: Promo) {
+    this.etudiantService.supprimerEtudiant(no_etudiant).subscribe(
+      {
+        next: resp => {
+          console.log(resp);
+          this.fetchEtudiants();
+          this.verifierPromo(promo);
+        },
+        error: err => {
+          console.log(err);
+        }
+      }
+    );
+  }
+
+  verifierPromo(newPromo: Promo) {
+    this.promotionService.verifierPromotion(newPromo).subscribe(
+      {
+        next: resp => {
+          console.log(resp);
+          this.fetchPromotions();
+        },
+        error: err => {
+          console.log(err);
+        }
+      }
+    );
+  }
+
+  modifierEtudiant(etudiant: Etudiant) {
+    this.etudiantService.modifierEtudiant(etudiant).subscribe(
+      {
+        next: resp => {
+          console.log(resp);
+          this.fetchEtudiants();
+        },
+        error: err => {
+          console.log(err);
+        }
+      }
+    );
+  }
+
 }

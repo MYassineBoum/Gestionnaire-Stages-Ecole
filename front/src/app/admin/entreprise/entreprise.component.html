@@ -25,20 +25,22 @@
               </tr>
             </thead>
             <tbody *ngFor="let entreprise of listeEntreprises | searchFilter: searchEntreprise">
-              <td>{{entreprise.no_entreprise}}</td>
-              <td>{{entreprise.forme_juridique_entreprise}}</td>
-              <td>{{entreprise.raison_sociale_entreprise}}</td>
-              <td>{{entreprise.adresse_entreprise}}</td>
-              <td>{{entreprise.code_postal_entreprise}}</td>
-              <td>{{entreprise.ville_entreprise}}</td>
-              <td>{{entreprise.telephone_entreprise}}</td>
-              <td>{{entreprise.fax_entreprise}}</td>
-              <td>{{entreprise.contact_entreprise}}</td>
-              <td>{{entreprise.tel_contact_entreprise}}</td>
-              <td>
-                <mat-icon>edit</mat-icon>
-                <mat-icon>delete</mat-icon>
-              </td>
+              <tr>
+                <td>{{entreprise.no_entreprise}}</td>
+                <td><input type="text" name="forme_juridique_entreprise" [(ngModel)]="entreprise.qualite_etudiant" required></td>
+                <td><input type="text" name="raison_sociale_entreprise" [(ngModel)]="entreprise.raison_sociale_entreprise" required></td>
+                <td><input type="text" name="adresse_entreprise" [(ngModel)]="entreprise.adresse_entreprise" required></td>
+                <td><input type="text" name="code_postal_entreprise" [(ngModel)]="entreprise.code_postal_entreprise" required></td>
+                <td><input type="text" name="ville_entreprise" [(ngModel)]="entreprise.ville_entreprise" required></td>
+                <td><input type="text" name="telephone_entreprise" [(ngModel)]="entreprise.telephone_entreprise" required></td>
+                <td><input type="text" name="fax_entreprise" [(ngModel)]="entreprise.fax_entreprise" required></td>
+                <td><input type="text" name="contact_entreprise" [(ngModel)]="entreprise.contact_entreprise" required></td>
+                <td><input type="text" name="tel_contact_entreprise" [(ngModel)]="entreprise.tel_contact_entreprise" required></td>
+                <td id="actions">
+                  <mat-icon (click)="modifierEntreprise(entreprise)">save</mat-icon>
+                  <mat-icon (click)="supprimerEntreprise(entreprise.no_entreprise)">delete</mat-icon>
+                </td>
+              </tr>
             </tbody>
           </table> 
     </div>

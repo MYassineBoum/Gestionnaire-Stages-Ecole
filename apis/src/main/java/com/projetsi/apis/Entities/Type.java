@@ -16,7 +16,6 @@ import java.util.List;
 public class Type {
     @Id
     private Integer code_type;
-
     private Integer nb_semaines;
 
 //    @OneToMany(mappedBy = "type")

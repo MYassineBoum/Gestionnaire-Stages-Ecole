@@ -4,6 +4,7 @@ import java.util.List;
 import java.util.Optional;
 
 import com.projetsi.apis.Entities.Etudiant;
+import com.projetsi.apis.Entities.Stage;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -21,28 +22,30 @@ public class PromoController {
         return ResponseEntity.ok(promoRepository.save(promo));
     }
 
-    @PostMapping("/api/promo/supprimer")
-    public ResponseEntity<String> supprimerPromo(@PathVariable("no_promo") Long no_promo) {
-        Optional<Promo> promo = promoRepository.findById(no_promo);
+    @DeleteMapping("/api/promo/supprimer/{annee_promo}")
+    public ResponseEntity<String> supprimerPromo(@PathVariable("annee_promo") Long annee_promo) {
+        Optional<Promo> promo = promoRepository.findById(annee_promo);
         promo.ifPresent(value -> promoRepository.delete(value));
-        return new ResponseEntity<String>("Promo supprimé!", HttpStatus.OK);
+        return new ResponseEntity<String>("Promotion supprimée!", HttpStatus.OK);
     }
 
-    @PutMapping("/api/promo/modifier/{annee_promo}")
-    public ResponseEntity<Promo> modifierPromo(@PathVariable("annee_promo") long annee_promo) {
-        Optional<Promo> promoTrouve = promoRepository.findById(annee_promo);
-        if(promoTrouve.isPresent()) {
-            promoTrouve.get().setNb_etudiants(promoTrouve.get().getNb_etudiants() + 1);
-            return ResponseEntity.ok(promoRepository.save(promoTrouve.get()));
-        } else {
-            Promo newPromo = new Promo(annee_promo, 1);
-            return ResponseEntity.ok(promoRepository.save(newPromo));
-        }
+    @PostMapping("/api/promo/modifier")
+    public ResponseEntity<Promo> modifierPromo(@RequestBody Promo promo) {
+        promo.setNb_etudiants(promo.getNb_etudiants() + 1);
+        return ResponseEntity.ok(promoRepository.save(promo));
     }
 
     @GetMapping("/api/promo/liste")
     public ResponseEntity<List<Promo>> listerPromos() {
         return ResponseEntity.ok(promoRepository.findAll());
     }
+
+    @PostMapping("/api/promo/verifier")
+    public ResponseEntity<Promo> verifierPromo(@RequestBody Promo promo) {
+        promo.setNb_etudiants(promo.getNb_etudiants() - 1);
+        return ResponseEntity.ok(promoRepository.save(promo));
+    }
+
+
 
 }

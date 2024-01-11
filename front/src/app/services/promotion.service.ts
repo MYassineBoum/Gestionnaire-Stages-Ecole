@@ -18,9 +18,19 @@ export class PromotionService {
     return this.httpClient.post('http://localhost:9092/api/promo/ajouter', promo);
   }
 
-  modifierPromotion(annee_promo: number, requestBody?: any): Observable<any> {
-    const url = `http://localhost:9092/api/promo/modifier/${annee_promo}`;
-    return this.httpClient.put(url, requestBody);
+  modifierPromotion(promo: Promo) {
+    return this.httpClient.post('http://localhost:9092/api/promo/modifier', promo);
   }
-  
+
+  supprimerPromotion(annee_promo: number): Observable<any> {
+    if(confirm("Vous voulez vraiment supprimer cette promotion ?")){
+      return this.httpClient.delete(`http://localhost:9092/api/promo/supprimer/${annee_promo}`, {responseType: 'text'});
+    } else {
+      return new Observable();
+    }
+  }
+
+  verifierPromotion(promo: Promo) {
+    return this.httpClient.post('http://localhost:9092/api/promo/verifier', promo);  
+  }
 }

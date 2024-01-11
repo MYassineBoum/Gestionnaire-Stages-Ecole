@@ -39,21 +39,31 @@
             <tbody *ngFor="let etudiant of listeEtudiants | searchFilter: searchEtudiant">
               <tr>
                 <td>{{etudiant.no_etudiant}}</td>
-                <td>{{etudiant.qualite_etudiant}}</td>
-                <td>{{etudiant.nom_etudiant}}</td>
-                <td>{{etudiant.prenom_etudiant}}</td>
-                <td>{{etudiant.email_etudiant}}</td>
-                <td>{{etudiant.adresse_etudiant}}</td>
-                <td>{{etudiant.code_postal_etudiant}}</td>
-                <td>{{etudiant.ville_etudiant}}</td>
-                <td>{{etudiant.date_naissance_etudiant}}</td>
-                <td>{{etudiant.sexe_etudiant}}</td>
-                <td>{{etudiant.telephone_etudiant}}</td>
-                <td>{{etudiant.mention_etudiant}}</td>
-                <td>{{etudiant.annee_promo}}</td>
                 <td>
-                  <mat-icon>edit</mat-icon>
-                  <mat-icon>delete</mat-icon>
+                  <select name="qualite_etudiant" [(ngModel)]="etudiant.qualite_etudiant" required>
+                    <option value="Mr">Mr</option>
+                    <option value="Mme">Mme</option>
+                  </select>
+                </td>
+                <td><input type="text" name="nom_etudiant" [(ngModel)]="etudiant.nom_etudiant" required></td>
+                <td><input type="text" name="prenom_etudiant" [(ngModel)]="etudiant.prenom_etudiant" required></td>
+                <td><input type="text" name="email_etudiant" [(ngModel)]="etudiant.email_etudiant" required></td>
+                <td><input type="text" name="adresse_etudiant" [(ngModel)]="etudiant.adresse_etudiant" required></td>
+                <td><input type="text" name="code_postal_etudiant" [(ngModel)]="etudiant.code_postal_etudiant" required></td>
+                <td><input type="text" name="ville_etudiant" [(ngModel)]="etudiant.ville_etudiant" required></td>
+                <td><input type="text" name="date_naissance_etudiant" [(ngModel)]="etudiant.date_naissance_etudiant" required></td>
+                <td>
+                  <select name="sexe_etudiant" [(ngModel)]="etudiant.sexe_etudiant" required>
+                    <option value="M">M</option>
+                    <option value="F">F</option>
+                  </select>
+                </td>
+                <td><input type="text" name="telephone_etudiant" [(ngModel)]="etudiant.telephone_etudiant" required></td>
+                <td><input type="text" name="mention_etudiant" [(ngModel)]="etudiant.mention_etudiant" required></td>
+                <td>{{etudiant.promo.annee_promo}}</td>
+                <td id="actions">
+                  <mat-icon (click)="modifierEtudiant(etudiant)">save</mat-icon>
+                  <mat-icon (click)="supprimerEtudiant(etudiant.no_etudiant, etudiant.promo)">delete</mat-icon>
                 </td>
               </tr>
             </tbody>

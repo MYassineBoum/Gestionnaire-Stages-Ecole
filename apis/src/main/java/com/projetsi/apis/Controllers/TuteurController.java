@@ -20,17 +20,15 @@ public class TuteurController {
         return ResponseEntity.ok(tuteurRepository.save(tuteur));
     }
 
-    @PostMapping("/api/tuteur/supprimer")
+    @DeleteMapping("/api/tuteur/supprimer/{no_tuteur}")
     public ResponseEntity<String> supprimerTuteur(@PathVariable("no_tuteur") Long no_tuteur) {
         Optional<Tuteur> Tuteur = tuteurRepository.findById(no_tuteur);
         tuteurRepository.delete(Tuteur.get());
         return new ResponseEntity<String>("Tuteur supprimé!", HttpStatus.OK);
     }
 
-    @PostMapping("/api/tuteur/modifier")
+    @PutMapping("/api/tuteur/modifier")
     public ResponseEntity<Tuteur> modifierTuteur(@RequestBody Tuteur tuteur) {
-        Optional<Tuteur> tuteurTrouvé = tuteurRepository.findById(tuteur.getNo_tuteur());
-        tuteurRepository.delete(tuteurTrouvé.get());
         return ResponseEntity.ok(tuteurRepository.save(tuteur));
     }
 

@@ -52,4 +52,32 @@ export class TuteurComponent implements OnInit {
       }
     );
   }
+
+  modifierTuteur(tuteur: Tuteur) {
+    this.tuteurService.modifierTuteur(tuteur).subscribe(
+      {
+        next: resp => {
+          console.log(resp);
+          this.fetchTuteurs();
+        },
+        error: err => {
+          console.log(err);
+        }
+      }
+    );
+  }
+
+  supprimerTuteur(no_tuteur: number) {
+    this.tuteurService.supprimerTuteur(no_tuteur).subscribe(
+      {
+        next: resp => {
+          console.log(resp);
+          this.fetchTuteurs();
+        },
+        error: err => {
+          console.log(err);
+        }
+      }
+    );
+  }
 }

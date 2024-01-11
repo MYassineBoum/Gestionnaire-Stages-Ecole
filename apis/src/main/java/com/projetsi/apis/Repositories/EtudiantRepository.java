@@ -2,6 +2,7 @@ package com.projetsi.apis.Repositories;
 
 import com.projetsi.apis.Entities.Etudiant;
 
+import com.projetsi.apis.Entities.Promo;
 import jakarta.transaction.Transactional;
 
 import org.springframework.data.jpa.repository.JpaRepository;
@@ -17,6 +18,6 @@ public interface EtudiantRepository extends JpaRepository<Etudiant, Long> {
     Etudiant findByEmail(String email_etudiant);
 
     @Transactional
-    @Query(value = "FROM Etudiant WHERE annee_promo = ?1")
+    @Query(value = "FROM Etudiant WHERE promo.annee_promo = ?1")
     List<Etudiant> findByPromo(Long annee_promo);
 }

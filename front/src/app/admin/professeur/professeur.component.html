@@ -29,20 +29,25 @@
             <tbody *ngFor="let professeur of listeProfesseurs | searchFilter: searchProfesseur">
               <tr>
                 <td>{{professeur.no_professeur}}</td>
-                <td>{{professeur.qualite_professeur}}</td>
-                <td>{{professeur.nom_professeur}}</td>
-                <td>{{professeur.prenom_professeur}}</td>
-                <td>{{professeur.email_professeur}}</td>
-                <td>{{professeur.adresse_professeur}}</td>
-                <td>{{professeur.code_postal_professeur}}</td>
-                <td>{{professeur.ville_professeur}}</td>
-                <td>{{professeur.tel_ecole_professeur}}</td>
-                <td>{{professeur.tel_domicile_professeur}}</td>
-                <td>{{professeur.date_embauche_professeur}}</td>
-                <td>{{professeur.date_depart_professeur}}</td>
                 <td>
-                  <mat-icon>edit</mat-icon>
-                  <mat-icon>delete</mat-icon>
+                  <select name="qualite_professeur" [(ngModel)]="professeur.qualite_professeur" required>
+                    <option value="Mr">Mr</option>
+                    <option value="Mme">Mme</option>
+                  </select>
+                </td>
+                <td><input type="text" name="nom_professeur" [(ngModel)]="professeur.nom_professeur" required></td>
+                <td><input type="text" name="prenom_professeur" [(ngModel)]="professeur.prenom_professeur" required></td>
+                <td><input type="email" name="email_professeur" [(ngModel)]="professeur.email_professeur" required></td>
+                <td><input type="text" name="adresse_professeur" [(ngModel)]="professeur.adresse_professeur" required></td>
+                <td><input type="number" name="code_postal_professeur" [(ngModel)]="professeur.code_postal_professeur" required></td>
+                <td><input type="text" name="ville_professeur" [(ngModel)]="professeur.ville_professeur" required></td>
+                <td><input type="number" name="tel_ecole_professeur" [(ngModel)]="professeur.tel_ecole_professeur" required></td>
+                <td><input type="number" name="tel_domicile_professeur" [(ngModel)]="professeur.tel_domicile_professeur" required></td>
+                <td><input matInput type="text" name="date_embauche_professeur" [(ngModel)]="professeur.date_embauche_professeur" required></td>
+                <td><input matInput type="text" name="date_depart_professeur" [(ngModel)]="professeur.date_depart_professeur" required></td>
+                <td id="actions">
+                  <mat-icon (click)="modifierProfesseur(professeur)">save</mat-icon>
+                  <mat-icon (click)="supprimerProfesseur(professeur.no_professeur)">delete</mat-icon>
                 </td>
               </tr>
             </tbody>

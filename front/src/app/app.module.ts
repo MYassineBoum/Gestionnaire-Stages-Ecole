@@ -32,6 +32,7 @@ import { SearchFilterPipe } from './admin/search-filter.pipe';
 import { StagePopupComponent } from './admin/stage-popup/stage-popup.component';
 import { TuteurPopupComponent } from './admin/tuteur-popup/tuteur-popup.component';
 import { EntreprisePopupComponent } from './admin/entreprise-popup/entreprise-popup.component';
+import { ToastrModule } from 'ngx-toastr';
 
 @NgModule({
   declarations: [
@@ -69,7 +70,8 @@ import { EntreprisePopupComponent } from './admin/entreprise-popup/entreprise-po
     MaterialModule,
     HttpClientModule,
     FormsModule, 
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    ToastrModule.forRoot()
   ],
   providers: [
     {provide: HTTP_INTERCEPTORS, useClass: AppHttpInterceptor, multi: true},

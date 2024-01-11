@@ -21,17 +21,15 @@ public class ProfesseurController {
         return ResponseEntity.ok(professeurRepository.save(professeur));
     }
 
-    @PostMapping("/api/professeur/supprimer")
+    @DeleteMapping("/api/professeur/supprimer/{no_professeur}")
     public ResponseEntity<String> supprimerProfesseur(@PathVariable("no_professeur") Long no_professeur) {
         Optional<Professeur> professeur = professeurRepository.findById(no_professeur);
         professeurRepository.delete(professeur.get());
         return new ResponseEntity<String>("Professeur supprimé!", HttpStatus.OK);
     }
 
-    @PostMapping("/api/professeur/modifier")
+    @PutMapping("/api/professeur/modifier")
     public ResponseEntity<Professeur> modifierProfesseur(@RequestBody Professeur professeur) {
-        Optional<Professeur> professeurTrouvé = professeurRepository.findById(professeur.getNo_professeur());
-        professeurRepository.delete(professeurTrouvé.get());
         return ResponseEntity.ok(professeurRepository.save(professeur));
     }
 
