@@ -24,5 +24,9 @@ export class StageService {
   fetchStagesProfesseur(no_professeur:number) {
     return this.httpClient.get(`http://localhost:9092/api/etudiant/get/stageProf?no_professeur=${no_professeur}`);
   }
+
+  ajouterCompte(stage:Stages) {
+    return this.httpClient.put('http://localhost:9092/api/etudiant/get/modifier', stage);
+  }
   
 }

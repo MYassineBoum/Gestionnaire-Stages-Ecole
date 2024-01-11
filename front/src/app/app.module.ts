@@ -57,7 +57,7 @@ import { EntreprisePopupComponent } from './admin/entreprise-popup/entreprise-po
     SearchFilterPipe,
     StagePopupComponent,
     TuteurPopupComponent,
-    EntreprisePopupComponent
+    EntreprisePopupComponent,
   ],
   imports: [
     BrowserModule,

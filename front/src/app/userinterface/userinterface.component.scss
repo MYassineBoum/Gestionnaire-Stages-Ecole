@@ -1,6 +1,3 @@
-
-
-
 .cardetud{
     margin: 50px;
 }
@@ -69,3 +66,21 @@
     border-radius: 5px;
     position: relative;
 }
+
+.cpt{
+    display: flex;
+}
+
+.cpt input{
+    text-align: center;
+    background-color: transparent;
+    border: none;
+    border-bottom: 1px solid gray;
+    border-bottom-right-radius: 2px;
+    border-bottom-left-radius: 2px;
+}
+
+.cpt button {
+    border: none;
+}
+

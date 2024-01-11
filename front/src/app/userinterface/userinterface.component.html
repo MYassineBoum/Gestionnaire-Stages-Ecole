@@ -1,3 +1,4 @@
+<div class="all">
 <div *ngIf="etudiant!=null" class="blocEtud">
     <div class="cardetud">
         <p>Salut! {{etudiant.qualite_etudiant}} {{etudiant.nom_etudiant}}</p>
@@ -42,7 +43,7 @@
         <p>Salut! {{professeur.qualite_professeur}} {{professeur.nom_professeur}}</p>
         <p>{{professeur.email_professeur}}</p>
     </div>
-    <p class="stageP">Voici la liste des stages que vous avez surveillé jusu'au présent :</p>
+    <p class="stageP">Voici la liste des stages que vous avez surveillé jusqu'à présent :</p>
     <div class="stage">
         <div class="liste">
             <table class="table table-striped">
@@ -67,7 +68,12 @@
                         <td>{{stage.entreprise.no_entreprise}}</td>
                         <td>{{stage.type.code_type}}</td>
                         <td>{{stage.annee_stage}}</td>
-                        <td>{{stage.compte_rendu_stage}}</td>
+                        <td class="cpt"><input type="text" name="compte_rendu_stage" 
+                            [(ngModel)]="stage.compte_rendu_stage" value="stage.compte_rendu_stage">
+                            <button (click)="ajouterCompte(stage)">
+                                <mat-icon>save</mat-icon>
+                            </button>
+                        </td>
                     </tr>
                 </tbody>
             </table> 
@@ -80,4 +86,8 @@
         <p>Pas d'utilisateur associé au email saisi, veuillez saisir une adresse existante</p>
         <button routerLink="/identification" class="butn">Retour</button>
     </div>
+</div>
+
+<app-footer></app-footer>
+
 </div>
