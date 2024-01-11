@@ -14,6 +14,7 @@ import { UserInterfaceComponent } from './userinterface/userinterface.component'
 import { PromotionComponent } from './admin/promotion/promotion.component';
 import { TypeComponent } from './admin/type/type.component';
 import { authenticationGuard } from './guards/authentication.guard';
+import { CompetenceComponent } from './admin/competence/competence.component';
 
 const routes: Routes = [
   { path: '', component: HomeComponent, children: [
@@ -50,6 +51,10 @@ const routes: Routes = [
 
   { path: 'etudiant', component: LayoutComponent, canActivate: [authenticationGuard], children: [
     { path: '', component: EtudiantComponent },
+  ]},
+
+  { path: 'compétence', component: LayoutComponent, canActivate: [authenticationGuard], children: [
+    { path: '', component: CompetenceComponent },
   ]},
 
   { path: 'professeur', component: LayoutComponent, canActivate: [authenticationGuard], children: [

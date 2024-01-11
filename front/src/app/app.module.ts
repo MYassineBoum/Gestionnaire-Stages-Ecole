@@ -33,6 +33,7 @@ import { StagePopupComponent } from './admin/stage-popup/stage-popup.component';
 import { TuteurPopupComponent } from './admin/tuteur-popup/tuteur-popup.component';
 import { EntreprisePopupComponent } from './admin/entreprise-popup/entreprise-popup.component';
 import { ToastrModule } from 'ngx-toastr';
+import { CompetenceComponent } from './admin/competence/competence.component';
 
 @NgModule({
   declarations: [
@@ -59,6 +60,7 @@ import { ToastrModule } from 'ngx-toastr';
     StagePopupComponent,
     TuteurPopupComponent,
     EntreprisePopupComponent,
+    CompetenceComponent,
   ],
   imports: [
     BrowserModule,

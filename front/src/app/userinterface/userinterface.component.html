@@ -1,5 +1,5 @@
 <div *ngIf="etudiant!=null" class="blocEtud">
-    <div class="cardetud">
+    <div class="defentity">
         <p>Salut! {{etudiant.qualite_etudiant}} {{etudiant.nom_etudiant}}</p>
         <p>{{etudiant.email_etudiant}}</p>
     </div>
@@ -38,7 +38,7 @@
 
 
 <div *ngIf="professeur!=null" class="blocEtud">
-    <div class="cardetud">
+    <div class="defentity">
         <p>Salut! {{professeur.qualite_professeur}} {{professeur.nom_professeur}}</p>
         <p>{{professeur.email_professeur}}</p>
     </div>
@@ -85,6 +85,10 @@
         <p>Pas d'utilisateur associé au email saisi, veuillez saisir une adresse existante</p>
         <button routerLink="/identification" class="butn">Retour</button>
     </div>
+</div>
+
+<div class="back">
+    <mat-icon routerLink="/identification">keyboard_backspace</mat-icon>
 </div>
 
 <app-footer></app-footer>
