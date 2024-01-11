@@ -4,6 +4,12 @@
         <mat-label>Année</mat-label>
         <input matInput [(ngModel)]="newPromo.annee_promo">
     </mat-form-field>
+    <mat-form-field>
+        <mat-label>N° Professeur Responsable</mat-label>
+        <mat-select [(ngModel)]="professeur" placeholder="Choisir">
+            <mat-option *ngFor="let professeur of listeProfesseurs" [value]="professeur">{{professeur.no_professeur}}</mat-option>
+        </mat-select>
+    </mat-form-field>
 </div>
 <div mat-dialog-actions>
     <button mat-button mat-dialog-close>Annuler</button>

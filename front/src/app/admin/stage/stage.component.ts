@@ -53,4 +53,31 @@ export class StageComponent implements OnInit {
     );
   }
 
+  modifierStage(stage: Stages) {
+    this.stageService.modifierStage(stage).subscribe(
+      {
+        next: () => {
+          alert("Stage modifié!");
+        },
+        error: err => {
+          console.log(err);
+        }
+      }
+    );
+  }
+
+  supprimerStage(no_stage: number) {
+    this.stageService.supprimerStage(no_stage).subscribe(
+      {
+        next: () => {
+          alert("Stage supprimé!");
+          this.fetchStages();
+        },
+        error: err => {
+          console.log(err);
+        }
+      }
+    );
+  }
+
 }

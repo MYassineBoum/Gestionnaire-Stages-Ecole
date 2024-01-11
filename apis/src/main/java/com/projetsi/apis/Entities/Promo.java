@@ -16,4 +16,8 @@ public class Promo {
     private long annee_promo;
 
     private int nb_etudiants = 0;
+
+    @ManyToOne
+    @JoinColumn(name = "no_professeur")
+    private Professeur professeur;
 }

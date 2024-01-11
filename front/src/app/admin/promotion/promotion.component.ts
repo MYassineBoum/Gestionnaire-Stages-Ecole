@@ -1,6 +1,7 @@
 import { PromotionPopupComponent } from './../promotion-popup/promotion-popup.component';
 import { Component, OnInit } from '@angular/core';
 import { MatDialog } from '@angular/material/dialog';
+import { Professeur } from 'src/app/Classes/professeur';
 import { Promo } from 'src/app/Classes/promo';
 import { PromotionService } from 'src/app/services/promotion.service';
 

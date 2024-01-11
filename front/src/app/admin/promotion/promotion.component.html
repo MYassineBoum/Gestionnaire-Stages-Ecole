@@ -9,6 +9,7 @@
               <tr>
                 <th scope="col">Année</th>
                 <th scope="col">Nombre des étudiants</th>
+                <th scope="col">N° Professeur Responsable</th>
                 <th scope="col">Actions</th>
               </tr>
             </thead>
@@ -16,6 +17,7 @@
               <tr>
                 <td>{{promo.annee_promo}}</td>
                 <td>{{promo.nb_etudiants}}</td>
+                <td>{{promo.professeur?.no_professeur}}</td>
                 <td>
                   <mat-icon (click)="supprimerPromo(promo.annee_promo)">delete</mat-icon>
                 </td>
