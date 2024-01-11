@@ -67,6 +67,7 @@ public class SecurityConfig {
                                 .requestMatchers("/api/login/**").permitAll()
                                 .requestMatchers(HttpMethod.GET, "/api/professeur/get/**").permitAll()
                                 .requestMatchers(HttpMethod.GET, "/api/etudiant/get/**").permitAll()
+                                .requestMatchers(HttpMethod.PUT, "/api/etudiant/get/modifier").permitAll()
                                 .anyRequest().authenticated()
                 )
                 //.authorizeHttpRequests(ar->ar.anyRequest().authenticated())

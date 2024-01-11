@@ -28,20 +28,10 @@ public class StageController {
         return new ResponseEntity<String>("Stage supprimé!", HttpStatus.OK);
     }
 
-    @PostMapping("/api/stage/modifier")
-    public ResponseEntity<Stage> modifierStage(@RequestBody Stage stage) {
-        Optional<Stage> stageTrouvé = stageRepository.findById(stage.getNo_stage());
-        stageRepository.delete(stageTrouvé.get());
-        return ResponseEntity.ok(stageRepository.save(stage));
-    }
 
     @GetMapping("/api/stage/liste")
     public ResponseEntity<List<Stage>> listerStages() {
         return ResponseEntity.ok(stageRepository.findAll());
     }
 
-    // @GetMapping("/api/etudiant/get/stage")
-    // public ResponseEntity<List<Stage>> getStageEtudiant(@RequestParam("no_etudiant") Long no_etudiant) {
-    //     return ResponseEntity.ok(stageRepository.findStageEtudiant(no_etudiant));
-    // }
 }
