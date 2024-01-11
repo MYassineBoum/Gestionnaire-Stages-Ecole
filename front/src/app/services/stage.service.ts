@@ -38,4 +38,8 @@ export class StageService {
     }
   }
   
+  ajouterCompte(stage:Stages) {
+    return this.httpClient.put('http://localhost:9092/api/etudiant/get/modifier', stage);
+  }
+  
 }

@@ -38,8 +38,4 @@ public class StageController {
         return ResponseEntity.ok(stageRepository.findAll());
     }
 
-    // @GetMapping("/api/etudiant/get/stage")
-    // public ResponseEntity<List<Stage>> getStageEtudiant(@RequestParam("no_etudiant") Long no_etudiant) {
-    //     return ResponseEntity.ok(stageRepository.findStageEtudiant(no_etudiant));
-    // }
 }

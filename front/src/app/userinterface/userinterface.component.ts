@@ -1,9 +1,14 @@
-import { Component, Input, OnInit } from '@angular/core';
+import { Component, Injectable, Input, OnInit } from '@angular/core';
 import { Professeur } from '../Classes/professeur';
 import { IdentificationComponent } from '../shared/identification/identification.component';
 import { Etudiant } from '../Classes/etudiant';
 import { Stages } from '../Classes/stages';
 import { StageService } from '../services/stage.service';
+import { MatDialog } from '@angular/material/dialog';
+
+@Injectable({
+  providedIn: 'root',
+})
 
 @Component({
   selector: 'app-user-interface',
@@ -15,11 +20,14 @@ export class UserInterfaceComponent implements OnInit {
   etudiant!:Etudiant;
   listeStagesProf!:Stages[];
   listeStagesEtud!:Stages[];
-  constructor(private iden:IdentificationComponent,private stageservice:StageService) {
+  stage!:Stages;
+  
+  constructor(private iden:IdentificationComponent,private stageservice:StageService,private dialog: MatDialog) {
     this.listeStagesProf = [];
     this.listeStagesEtud = [];
     this.professeur = new Professeur();
     this.etudiant = new Etudiant();
+    this.stage = new Stages();
   }
   
   ngOnInit() {
@@ -55,4 +63,21 @@ export class UserInterfaceComponent implements OnInit {
       }
     );
   }
+
+  ajouterCompte(stage:Stages){
+    console.log(stage);
+    this.stageservice.ajouterCompte(stage).subscribe(
+      {
+        next: (resp) => {
+          console.log(resp);
+          this.getStagesProf();
+        },
+        error: (err) => {
+          console.log(err);
+        }
+      }
+    );
+  }
+
+  
 }

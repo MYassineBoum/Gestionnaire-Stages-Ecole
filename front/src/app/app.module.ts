@@ -58,7 +58,7 @@ import { ToastrModule } from 'ngx-toastr';
     SearchFilterPipe,
     StagePopupComponent,
     TuteurPopupComponent,
-    EntreprisePopupComponent
+    EntreprisePopupComponent,
   ],
   imports: [
     BrowserModule,

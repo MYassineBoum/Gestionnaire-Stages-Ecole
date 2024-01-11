@@ -64,4 +64,9 @@ public class EtudiantController {
         return ResponseEntity.ok(stageRepository.findStageProfesseur(no_professeur));
     }
 
+    @PutMapping("/api/etudiant/get/modifier")
+    public ResponseEntity<Stage> modifierStage(@RequestBody Stage stage) {
+        return ResponseEntity.ok(stageRepository.save(stage));
+    }
+
 }
