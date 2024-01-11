@@ -33,10 +33,10 @@
                 <td>{{stage.annee_stage}}</td>
                 <td *ngIf="stage.compte_rendu_stage != null">{{stage.compte_rendu_stage}}</td>
                 <td *ngIf="stage.compte_rendu_stage == null">Bientot disponible</td>
-                <!-- <td id="actions">
-                  <mat-icon (click)="modifierEtudiant(etudiant)">save</mat-icon>
-                  <mat-icon (click)="supprimerEtudiant(etudiant.no_etudiant, etudiant.promo)">delete</mat-icon>
-                </td> -->
+                <td id="actions">
+                  <mat-icon (click)="modifierStage(stage)">save</mat-icon>
+                  <mat-icon (click)="supprimerStage(stage.no_stage)">delete</mat-icon>
+                </td>
               </tr>
             </tbody>
           </table> 
