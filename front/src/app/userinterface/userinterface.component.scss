@@ -1,16 +1,12 @@
-.cardetud{
-    margin: 50px;
-    height: 100%;
-}
-
-
-.cardetud p:first-child{
+.defentity p:first-child{
+    text-align: start;
     font-size: 50px;
     font-weight: bold;
     font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
 }
 
-.cardetud p:nth-child(2){
+.defentity p:nth-child(2){
+    text-align: center;
     margin-top: -20px;
     font-size: 30px;
     color: #B6BBC4;
@@ -18,10 +14,21 @@
 }
 
 .blocEtud{
-    padding: 30px;
+    height: 85vh;
+    width: 100%;
+    padding: 50px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    overflow: hidden;
     font-size: large;
     font-weight: bold;
     font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+}
+
+.liste {
+    overflow: auto;
+    width: 100%;
 }
 
 .stageP{
@@ -29,17 +36,7 @@
 }
 
 .stage {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
     padding: 50px;
-}
-
-
-.error .diag{
-    
 }
 
 .diag{
@@ -85,3 +82,12 @@
     border: none;
 }
 
+.back {
+    position: sticky;
+}
+
+.back mat-icon {
+    cursor: pointer;
+    margin-left: 30px;
+    scale: 1.5;
+}
