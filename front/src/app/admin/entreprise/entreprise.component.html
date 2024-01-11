@@ -27,7 +27,7 @@
             <tbody *ngFor="let entreprise of listeEntreprises | searchFilter: searchEntreprise">
               <tr>
                 <td>{{entreprise.no_entreprise}}</td>
-                <td><input type="text" name="forme_juridique_entreprise" [(ngModel)]="entreprise.qualite_etudiant" required></td>
+                <td><input type="text" name="forme_juridique_entreprise" [(ngModel)]="entreprise.forme_juridique_entreprise" required></td>
                 <td><input type="text" name="raison_sociale_entreprise" [(ngModel)]="entreprise.raison_sociale_entreprise" required></td>
                 <td><input type="text" name="adresse_entreprise" [(ngModel)]="entreprise.adresse_entreprise" required></td>
                 <td><input type="text" name="code_postal_entreprise" [(ngModel)]="entreprise.code_postal_entreprise" required></td>

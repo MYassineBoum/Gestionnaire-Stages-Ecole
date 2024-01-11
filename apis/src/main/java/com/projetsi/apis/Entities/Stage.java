@@ -38,6 +38,14 @@ public class Stage {
     @JoinColumn(name = "code_type")
     private Type type;
 
+    @ManyToOne
+    @JoinColumn(name = "code_competence")
+    private Competence competence;
+
+    @ManyToOne(cascade = CascadeType.ALL)
+    @JoinColumn(name = "niveau_exige")
+    private Niveau niveau;
+
     private int annee_stage;
     private String compte_rendu_stage;
 }

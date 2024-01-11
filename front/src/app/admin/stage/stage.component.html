@@ -17,6 +17,8 @@
                 <th scope="col">N° tuteur</th>
                 <th scope="col">N° entreprise</th>
                 <th scope="col">Code type</th>
+                <th scope="col">Code compétence</th>
+                <th scope="col">Niveau</th>
                 <th scope="col">Année stage</th>
                 <th scope="col">Compte rendu</th>
                 <th scope="col">Actions</th>
@@ -30,11 +32,13 @@
                 <td>{{stage.tuteur?.no_tuteur}}</td>
                 <td>{{stage.entreprise?.no_entreprise}}</td>
                 <td>{{stage.type?.code_type}}</td>
+                <td>{{stage.competence?.code_competence}}</td>
+                <td>{{stage.niveau?.niveau_exige}}</td>
                 <td>{{stage.annee_stage}}</td>
                 <td *ngIf="stage.compte_rendu_stage != null">{{stage.compte_rendu_stage}}</td>
                 <td *ngIf="stage.compte_rendu_stage == null">Bientot disponible</td>
                 <td id="actions">
-                  <mat-icon (click)="modifierStage(stage)">save</mat-icon>
+                  <!-- <mat-icon (click)="modifierStage(stage)">save</mat-icon> -->
                   <mat-icon (click)="supprimerStage(stage.no_stage)">delete</mat-icon>
                 </td>
               </tr>

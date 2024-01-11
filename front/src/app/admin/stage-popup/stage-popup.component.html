@@ -31,6 +31,12 @@
         </mat-select>
     </mat-form-field>
     <mat-form-field>
+        <mat-label>Code compétence</mat-label>
+        <mat-select [(ngModel)]="competence" placeholder="Choisir">
+            <mat-option *ngFor="let cp of listeCompetences" [value]="cp">{{cp.code_competence}}</mat-option>
+        </mat-select>
+    </mat-form-field>
+    <mat-form-field>
         <mat-label>Année stage</mat-label>
         <input matNativeControl [(ngModel)]="newStage.annee_stage">
     </mat-form-field>

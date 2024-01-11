@@ -1,1 +1,21 @@
-<p>competence works!</p>
+<div class="competence">
+    <p>Consulter la liste des compétences associées aux stages.</p>
+    <div class="liste">
+        <table class="table table-striped">
+            <thead>
+              <tr>
+                <th scope="col">Code</th>
+                <th scope="col">Libellé</th>
+                <th scope="col">Description</th>
+              </tr>
+            </thead>
+            <tbody *ngFor="let competence of listeCompetences">
+              <tr>
+                <td>{{competence.code_competence}}</td>
+                <td>{{competence.libelle_competence}}</td>
+                <td>{{competence.description_competence}}</td>
+              </tr>
+            </tbody>
+          </table> 
+    </div>
+  </div>

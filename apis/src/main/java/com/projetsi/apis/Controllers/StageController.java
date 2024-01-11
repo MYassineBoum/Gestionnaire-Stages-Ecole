@@ -3,6 +3,8 @@ package com.projetsi.apis.Controllers;
 import java.util.List;
 import java.util.Optional;
 
+import com.projetsi.apis.Entities.Niveau;
+import com.projetsi.apis.Repositories.NiveauRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -15,6 +17,12 @@ import com.projetsi.apis.Repositories.StageRepository;
 public class StageController {
     @Autowired
     private StageRepository stageRepository;
+    @Autowired
+    private NiveauRepository niveauRepository;
+    @GetMapping("/api/stage/niveau")
+    public Integer trouverNiveau(@RequestParam Integer code_type, @RequestParam String code_competence) {
+        return niveauRepository.findNiveau(code_type, code_competence);
+    }
 
     @PostMapping("/api/stage/ajouter")
     public ResponseEntity<Stage> ajouterStage(@RequestBody Stage stage) {

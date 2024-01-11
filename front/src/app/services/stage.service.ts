@@ -37,9 +37,13 @@ export class StageService {
       return new Observable();
     }
   }
-  
+
   ajouterCompte(stage:Stages) {
     return this.httpClient.put('http://localhost:9092/api/etudiant/get/modifier', stage);
+  }
+
+  trouverNiveau(code_type: number, code_competence: string) {
+    return this.httpClient.get(`http://localhost:9092/api/stage/niveau?code_type=${code_type}&code_competence=${code_competence}`);
   }
   
 }

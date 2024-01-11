@@ -3,6 +3,8 @@ package com.projetsi.apis.Entities;
 import jakarta.persistence.*;
 import lombok.*;
 
+import java.util.List;
+
 @Data
 @Getter
 @Setter
@@ -10,11 +12,12 @@ import lombok.*;
 @AllArgsConstructor
 @NoArgsConstructor
 @Entity
-@Table(name = "Compétence")
-public class Compétence {
+@Table(name = "Competence")
+public class Competence {
     @Id
     private String code_competence;
 
     private String libelle_competence;
     private String description_competence;
+
 }

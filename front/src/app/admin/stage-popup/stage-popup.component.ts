@@ -1,3 +1,4 @@
+import { CompetenceService } from './../../services/competence.service';
 import { StageService } from 'src/app/services/stage.service';
 import { Component, OnInit } from '@angular/core';
 import { Stages } from 'src/app/Classes/stages';
@@ -11,6 +12,8 @@ import { TuteurService } from 'src/app/services/tuteur.service';
 import { EtudiantService } from 'src/app/services/etudiant.service';
 import { EntrepriseService } from 'src/app/services/entreprise.service';
 import { TypeService } from 'src/app/services/type.service';
+import { Competence } from 'src/app/Classes/competence';
+import { Niveau } from 'src/app/Classes/niveau';
 
 
 @Component({
@@ -26,12 +29,15 @@ export class StagePopupComponent implements OnInit {
   tuteur !: Tuteur;
   entreprise !: Entreprise;
   type !: Type;
+  competence !: Competence;
+  niveau !: Niveau;
 
   listeProfesseurs !: Professeur[];
   listeEtudiants !: Etudiant[];
   listeEntreprises !: Entreprise[];
   listeTuteurs !: Tuteur[];
   listeTypes !: Type[];
+  listeCompetences !: Competence[];
 
   constructor(
     private stageService: StageService,
@@ -39,13 +45,16 @@ export class StagePopupComponent implements OnInit {
     private tuteurService: TuteurService,
     private etudiantService: EtudiantService,
     private entrepriseService: EntrepriseService,
-    private typeService: TypeService
+    private typeService: TypeService,
+    private competenceService: CompetenceService
   ) {
     this.etudiant = new Etudiant();
     this.professeur = new Professeur();
     this.tuteur = new Tuteur();
     this.entreprise = new Entreprise();
     this.type = new Type();
+    this.competence = new Competence();
+    this.niveau = new Niveau();
 
     this.newStage = new Stages();
       
@@ -54,6 +63,7 @@ export class StagePopupComponent implements OnInit {
     this.listeEntreprises = [];
     this.listeTuteurs = [];
     this.listeTypes = [];
+    this.listeCompetences = [];
   }
 
   ngOnInit(): void {
@@ -62,6 +72,7 @@ export class StagePopupComponent implements OnInit {
     this.fetchEntreprises();
     this.fetchTuteurs();
     this.fetchTypes();
+    this.fetchCompetences();
     //console.log("hadi hia : " + this.listeEtudiants);
   }
 
@@ -135,12 +146,60 @@ export class StagePopupComponent implements OnInit {
     );
   }
 
-  approuverAjout() {
+  fetchCompetences() {
+    this.competenceService.fetchCompetences().subscribe(
+      {
+        next: resp => {
+          console.log(resp);
+          this.listeCompetences = resp as Competence[];
+        },
+        error: err => {
+          console.log(err);
+        }
+      }
+    );
+  }
+
+  waitOneSecond(): Promise<void> {
+    return new Promise<void>((resolve) => {
+      setTimeout(() => {
+        resolve();
+      }, 1000);
+    });
+  }
+
+  grabNiveau(): Promise<void> {
+    return new Promise<void>((resolve, reject) => {
+      this.stageService.trouverNiveau(this.type.code_type, this.competence.code_competence).subscribe(
+        {
+          next: resp => {
+            this.niveau.niveau_exige = resp as number;
+            this.niveau.competence = this.competence;
+            this.niveau.type = this.type;
+            this.newStage.niveau = this.niveau;
+            console.log("xxxxxxxxxxxxxxx : " + JSON.stringify(this.newStage.niveau));
+            resolve(); // Resolve the promise when the asynchronous call is completed
+          },
+          error: err => {
+            console.log(err);
+            reject(err); // Reject the promise if there is an error
+          }
+        }
+      );
+    });
+  }
+  
+
+  async approuverAjout() {
     this.newStage.etudiant = this.etudiant;
     this.newStage.entreprise = this.entreprise;
     this.newStage.professeur = this.professeur;
     this.newStage.tuteur = this.tuteur;
     this.newStage.type = this.type;
+    this.newStage.competence = this.competence;
+    await this.grabNiveau();
+    //await this.waitOneSecond();
+    console.log("xxxxxxxxxxxxxxx2 : " + JSON.stringify(this.newStage.niveau));
     this.stageService.ajouterStage(this.newStage).subscribe(
       {
         next: resp => {
