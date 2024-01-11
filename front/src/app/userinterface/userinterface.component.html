@@ -28,8 +28,8 @@
                     <td>{{stage.entreprise.no_entreprise}}</td>
                     <td>{{stage.type.code_type}}</td>
                     <td>{{stage.annee_stage}}</td>
-                    <td *ngIf="stage.compte_rendu_stage != null">{{stage.compte_rendu_stage}}</td>
-                    <td *ngIf="stage.compte_rendu_stage == null">Bientôt disponible</td>
+                    <td *ngIf="stage.compte_rendu_stage != null && stage.compte_rendu_stage != ''">{{stage.compte_rendu_stage}}</td>
+                    <td *ngIf="stage.compte_rendu_stage == null || stage.compte_rendu_stage == ''">Bientôt disponible</td>
                     </tr>
                 </tbody>
             </table> 
