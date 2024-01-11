@@ -1,11 +1,12 @@
 .dashboard{
     width: 100%;
-    height: 100%;
+    height: 90vh;
     display: flex;
     flex-direction: column;
     align-items: center;
     font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
     padding: 50px;
+    overflow: auto;
 }
 
 .dashboard h1{

@@ -52,4 +52,32 @@ export class EntrepriseComponent implements OnInit {
       }
     );
   }
+
+  modifierEntreprise(entreprise: Entreprise) {
+    this.entrepriseService.modifierEntreprise(entreprise).subscribe(
+      {
+        next: resp => {
+          console.log(resp);
+          this.fetchEntreprises();
+        },
+        error: err => {
+          console.log(err);
+        }
+      }
+    );
+  }
+
+  supprimerEntreprise(no_entreprise: number) {
+    this.entrepriseService.supprimerEntreprise(no_entreprise).subscribe(
+      {
+        next: resp => {
+          console.log(resp);
+          this.fetchEntreprises();
+        },
+        error: err => {
+          console.log(err);
+        }
+      }
+    );
+  }
 }

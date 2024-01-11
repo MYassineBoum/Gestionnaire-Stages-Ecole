@@ -52,5 +52,33 @@ export class ProfesseurComponent implements OnInit {
       }
     );
   }
+
+  modifierProfesseur(professeur: Professeur) {
+    this.professeurService.modifierProfesseur(professeur).subscribe(
+      {
+        next: resp => {
+          console.log(resp);
+          this.fetchProfesseurs();
+        },
+        error: err => {
+          console.log(err);
+        }
+      }
+    );
+  }
+
+  supprimerProfesseur(no_professeur: number) {
+    this.professeurService.supprimerProfesseur(no_professeur).subscribe(
+      {
+        next: resp => {
+          console.log(resp);
+          this.fetchProfesseurs();
+        },
+        error: err => {
+          console.log(err);
+        }
+      }
+    );
+  }
   
 }

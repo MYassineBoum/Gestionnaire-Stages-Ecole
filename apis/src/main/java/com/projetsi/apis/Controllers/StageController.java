@@ -21,13 +21,17 @@ public class StageController {
         return ResponseEntity.ok(stageRepository.save(stage));
     }
 
-    @PostMapping("/api/stage/supprimer")
+    @DeleteMapping("/api/stage/supprimer/{no_stage}")
     public ResponseEntity<String> supprimerStage(@PathVariable("no_stage") Long no_stage) {
         Optional<Stage> stage = stageRepository.findById(no_stage);
         stageRepository.delete(stage.get());
         return new ResponseEntity<String>("Stage supprimé!", HttpStatus.OK);
     }
 
+    @PutMapping("/api/stage/modifier")
+    public ResponseEntity<Stage> modifierStage(@RequestBody Stage stage) {
+        return ResponseEntity.ok(stageRepository.save(stage));
+    }
 
     @GetMapping("/api/stage/liste")
     public ResponseEntity<List<Stage>> listerStages() {

@@ -29,7 +29,10 @@ public class Etudiant {
     private String telephone_etudiant;
     private String mention_etudiant;
     private String qualite_etudiant;
-    private Long annee_promo;
+
+    @ManyToOne
+    @JoinColumn(name = "annee_promo")
+    private Promo promo;
 
 //    @OneToOne(mappedBy = "etudiant")
 //    private Stage stage;

@@ -22,13 +22,13 @@
             <tbody *ngFor="let tuteur of listeTuteurs | searchFilter: searchTuteur">
               <tr>
                 <td>{{tuteur.no_tuteur}}</td>
-                <td>{{tuteur.qualite_tuteur}}</td>
-                <td>{{tuteur.nom_tuteur}}</td>
-                <td>{{tuteur.prenom_tuteur}}</td>
-                <td>{{tuteur.telephone_tuteur}}</td>
-                <td>
-                  <mat-icon>edit</mat-icon>
-                  <mat-icon>delete</mat-icon>
+                <td><input type="text" name="qualite_tuteur" [(ngModel)]="tuteur.qualite_tuteur" required></td>
+                <td><input type="text" name="nom_tuteur" [(ngModel)]="tuteur.nom_tuteur" required></td>
+                <td><input type="text" name="prenom_tuteur" [(ngModel)]="tuteur.prenom_tuteur" required></td>
+                <td><input type="text" name="telephone_tuteur" [(ngModel)]="tuteur.telephone_tuteur" required></td>
+                <td id="actions">
+                  <mat-icon (click)="modifierTuteur(tuteur)">save</mat-icon>
+                  <mat-icon (click)="supprimerTuteur(tuteur.no_tuteur)">delete</mat-icon>
                 </td>
               </tr>
             </tbody>

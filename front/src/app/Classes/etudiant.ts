@@ -1,3 +1,5 @@
+import { Promo } from "./promo";
+
 export class Etudiant {
 
     no_etudiant!:number;
@@ -12,5 +14,5 @@ export class Etudiant {
     telephone_etudiant!:string;
     mention_etudiant!:string;
     qualite_etudiant!:string;
-    annee_promo!:number;
+    promo!:Promo;
 }

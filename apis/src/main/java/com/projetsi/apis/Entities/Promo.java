@@ -15,5 +15,5 @@ public class Promo {
     @Id
     private long annee_promo;
 
-    private int nb_etudiants;
+    private int nb_etudiants = 0;
 }

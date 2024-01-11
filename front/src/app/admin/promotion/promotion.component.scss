@@ -4,6 +4,13 @@
     align-items: center;
     font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
     padding: 50px;
+    overflow: hidden;
+    height: 90vh;
+}
+
+.liste {
+    overflow: auto;
+    flex: 1;
 }
 
 .promotion p {
@@ -45,10 +52,18 @@
     padding: 20px;
 }
 
-th {
+td, th {
     text-align: center;
 }
 
-td {
-    text-align: center;
+mat-icon {
+    cursor: pointer;
+    margin-right: 5px;
+    margin-left: 5px;
+    transition: .2s;
+}
+
+mat-icon:hover {
+    color: red;
+    transition: .2s;
 }
