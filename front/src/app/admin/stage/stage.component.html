@@ -35,8 +35,8 @@
                 <td>{{stage.competence?.code_competence}}</td>
                 <td>{{stage.niveau?.niveau_exige}}</td>
                 <td>{{stage.annee_stage}}</td>
-                <td *ngIf="stage.compte_rendu_stage != null">{{stage.compte_rendu_stage}}</td>
-                <td *ngIf="stage.compte_rendu_stage == null">Bientot disponible</td>
+                <td *ngIf="stage.compte_rendu_stage != null && stage.compte_rendu_stage != ''">{{stage.compte_rendu_stage}}</td>
+                <td *ngIf="stage.compte_rendu_stage == null || stage.compte_rendu_stage == ''">Bientôt disponible</td>
                 <td id="actions">
                   <!-- <mat-icon (click)="modifierStage(stage)">save</mat-icon> -->
                   <mat-icon (click)="supprimerStage(stage.no_stage)">delete</mat-icon>

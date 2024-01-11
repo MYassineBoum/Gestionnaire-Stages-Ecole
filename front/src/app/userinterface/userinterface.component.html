@@ -28,7 +28,8 @@
                     <td>{{stage.entreprise.no_entreprise}}</td>
                     <td>{{stage.type.code_type}}</td>
                     <td>{{stage.annee_stage}}</td>
-                    <td>{{stage.compte_rendu_stage}}</td>
+                    <td *ngIf="stage.compte_rendu_stage != null && stage.compte_rendu_stage != ''">{{stage.compte_rendu_stage}}</td>
+                    <td *ngIf="stage.compte_rendu_stage == null || stage.compte_rendu_stage == ''">Bientôt disponible</td>
                     </tr>
                 </tbody>
             </table> 
@@ -67,8 +68,14 @@
                         <td>{{stage.entreprise.no_entreprise}}</td>
                         <td>{{stage.type.code_type}}</td>
                         <td>{{stage.annee_stage}}</td>
-                        <td class="cpt"><input type="text" name="compte_rendu_stage" 
-                            [(ngModel)]="stage.compte_rendu_stage" value="stage.compte_rendu_stage">
+                        <td class="cpt">
+                            <input type="text" name="compte_rendu_stage" 
+                            *ngIf="stage.compte_rendu_stage != null"
+                            [(ngModel)]="stage.compte_rendu_stage" value="stage.compte_rendu_stage" placeholder="Entrer le compte rendu">
+
+                            <input type="text" name="compte_rendu_stage" 
+                            *ngIf="stage.compte_rendu_stage == null"
+                            [(ngModel)]="stage.compte_rendu_stage" placeholder="Entrer le compte rendu">
                             <button (click)="ajouterCompte(stage)">
                                 <mat-icon>save</mat-icon>
                             </button>
