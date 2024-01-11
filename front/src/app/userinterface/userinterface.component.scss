@@ -26,17 +26,14 @@
     font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
 }
 
-.liste {
-    overflow: auto;
-    width: 100%;
-}
-
 .stageP{
     margin-left: 50px;
 }
 
 .stage {
-    padding: 50px;
+    margin-top: 20px;
+    overflow: auto;
+
 }
 
 .diag{
