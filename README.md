@@ -11,5 +11,6 @@ Un projet académique de la deuxième année à ENSIAS, qui consiste à réalise
 ![MCD2](https://github.com/MYassineBoum/Gestionnaire-Stages-Ecole/assets/115194839/e6d88ef1-919a-4732-9057-44cf7034073a)
 <br><br>
 ## MLD
-![MCD2](https://github.com/MYassineBoum/Gestionnaire-Stages-Ecole/assets/115194839/cf27d54f-7d33-489e-8df6-1c8df9417d05)
+![MLD2](https://github.com/MYassineBoum/Gestionnaire-Stages-Ecole/assets/115194839/f48769db-15d2-4c3f-8895-5ea5b645edb5)
+
 
