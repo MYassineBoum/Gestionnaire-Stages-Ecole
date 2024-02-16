@@ -1,5 +1,5 @@
 # Gestionnaire-Stages-Ecole
-Un projet académique de la deuxième année à ENSIAS, qui consiste à réaliser un système de gestion efficace des stages au sein d'une école.
+Un projet académique de la deuxième année à ENSIAS, consistant à réaliser un système de gestion efficace des stages au sein d'une école.
 <br><br>
 ## DFD
 ![diagramme_contexte](https://github.com/MYassineBoum/Gestionnaire-Stages-Ecole/assets/115194839/5de72002-3bcf-4b3b-b536-4061c552a50a)
